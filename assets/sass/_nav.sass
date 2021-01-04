@@ -1,0 +1,110 @@
+$color: #e5efff
+header
+     background: #fff
+     border-bottom: 1px solid $color
+     position: relative
+     z-index: 10
+     .container
+          background: #fff
+     +respond-to-down(small)
+          position: fixed
+          width: 100%
+nav
+     background: #fff
+     display: flex
+     height: 60px
+     .nav_logo
+          align-self: center
+          font-size: 28px
+          font-weight: 800
+          text-transform: uppercase
+          color: $primary
+          +respond-to-down(medium)
+               font-size: 18px
+               flex: 0 0 100px
+               max-width: 100px
+     .navbar-nav
+          display: -webkit-flex
+          display: -ms-flex
+          display: flex
+          margin-left: auto
+          flex-grow: 1
+          align-items: center
+          +respond-to-down(small)
+               position: absolute
+               bottom: -1px
+               left: 0
+               transform: translateY(100%)
+               width: 100%
+               background: #fff
+               border-bottom: 1px solid $color
+               z-index: -1
+               transition: all .6s ease-in-out
+
+               justify-content: space-between
+               box-shadow: 0 3px 5px rgba(black,.069)
+               &.hide
+                    transform: translateY(0%)
+          &.show
+               transform: translateX(0)
+               box-shadow: -5px 0 50px rgba(104, 121, 146, .6)
+          .nav-item
+               padding-left: 40px
+               text-align: right
+               font-weight: 500
+               &.active
+                    color: $primary
+
+
+               +respond-to-down(small)
+                    +py(10px)
+                    padding-left: 0
+                    &:not(:first-child)
+                         position: relative
+                         &::before
+                              content: ''
+                              position: absolute
+                              height: 20px
+                              width: 1px
+                              left: 0
+                              top: 50%
+                              transform: translateY(-50%)
+                              background: $color
+                    &:not(.active)
+                         flex: 1
+                         span
+                              display: none
+                    &.active
+                         color: $primary
+                         font-weight: 500
+                         flex: 2
+                         position: relative
+                         svg
+                              margin-right: 12px
+                         &::after
+                              position: absolute
+                              height: 2px
+                              width: 100%
+                              content: ''
+                              left: 0
+                              bottom: 0
+                              background: $primary
+
+          .nav-link
+               display: flex
+               align-items: center
+               font-size: 16px
+               justify-content: center
+               +respond-to(small)
+                    svg
+                         display: none
+          .balance
+               color: $primary
+               font-weight: 500
+               font-size: 18px
+               margin-right: 10px
+.balance_wrapper
+     display: flex
+     align-items: center
+     .balance
+          margin-right: 20px

@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR)
+
+// @import url(https://fonts.googleapis.com/css?family=Nanum+Myeongjo)
+
+*,::before,::after
+     box-sizing: border-box
+html,body,ul
+     margin: 0
+     padding: 0
+     text-rendering: geometricPrecision
+body
+     font-family: 'Noto Sans KR', sans-serif
+     font-size: 16px
+     font-style: normal
+     line-height: 1.45
+     color: #687992
+     text-rendering: optimizeLegibility
+     -moz-osx-font-smoothing: grayscale
+     -moz-font-feature-settings: "liga" on
+     background: #f5f7fc
+p
+     margin-top: 0
+     margin-bottom: 0.25rem
+ol:not(.default), ul:not(.default)
+     list-style: none
+     padding-left: 0
+a
+     text-decoration: none
+     color: inherit
+     &:hover
+          +ease-in-out(.3s)
+          cursor: pointer
+button, input, select, textarea
+     margin: 0
+     font: inherit
+hr
+     -webkit-box-sizing: content-box
+     box-sizing: content-box
+     height: 0
+     overflow: visible
+table
+     border-collapse: collapse
+     border-spacing: 0
+::placeholder
+     opacity: .6

@@ -1,0 +1,88 @@
+.container-fluid
+     width: 100%
+     +px($gap/2)
+     +mx(auto)
+.container
+     width: 100%
+     +mx(auto)
+     +px($gap/2)
+     +respond-to(x-small)
+          max-width: 540px
+     +respond-to(small)
+          max-width: 720px
+     +respond-to(medium)
+          max-width: 960px
+     +respond-to(large)
+          max-width: 1200px
+.row
+     +mx(-$gap/2)
+     +flexbox
+     +flex-wrap
+
+.flex-fill
+     flex: 1 1 auto !important
+.column
+     flex-direction: column
+@for $i from 1 to 11
+     .h-#{$i*10}
+          height: $i*10%
+     .w-#{$i*10}
+          width: $i*10%
+.h-md-100
+     +respond-to(medium)
+          height: 100%
+@for $i from 12 to 0
+     .col-#{$i},.col-sm-#{$i},.col-md-#{$i},.col-lg-#{$i},
+          position: relative
+          width: 100%
+          +px($gap/2)
+     +respond-to(large)
+          .col-lg-#{$i}
+               +flex(100%/12 * $i)
+               max-width: 100%/12 * $i
+     +respond-to(medium)
+          .col-md-#{$i}
+               +flex(100%/12 * $i)
+               max-width: 100%/12 * $i
+     +respond-to(small)
+          .col-sm-#{$i}
+               +flex(100%/12 * $i)
+               max-width: 100%/12 * $i
+
+     .col-#{$i}
+          +flex(100%/12 * $i)
+          max-width: 100%/12 * $i
+.col
+     max-width: 100%
+     flex-basis: 0
+     flex-grow: 1
+     +px($gap/2)
+.col-auto
+     width: auto
+     max-width: none
+     flex: 0 0 auto
+     +px($gap/2)
+
+.page
+     min-height: 90vh
+     padding-top: 30px
+     +respond-to-down(small)
+          padding-top: 110px
+
+.fixed
+     position: fixed
+.sticky
+     position: sticky
+.flex
+     +flexbox
+
+aside
+     height: 100vh
+     position: sticky
+     top: 0
+     width: 300px
+     border-right: 1px solid grey
+main
+     max-width: 1620px
+     margin-top: $gap
+     +px($gap/2)

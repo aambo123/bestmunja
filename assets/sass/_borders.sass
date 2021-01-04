@@ -1,0 +1,13 @@
+@each $position,$value in $positions
+     @each $color,$color-value in $colors
+          @for $m from 1 to 10
+               .b#{$position}-#{$m}-#{$color}
+                    border-#{$value}: $m*1px solid $color-value
+               .b-#{$m}-#{$color}
+                    border: $m*1px solid $color-value
+          @for $i from 1 to 10
+               @if lighten($color-value, 8% * (10 - $i))!=white
+                    .b#{$position}-#{$color}-#{$i*10}
+                         border-#{$value}: 1px solid lighten($color-value, 8% * (10 - $i))
+.round
+     border-radius: 5rem !important

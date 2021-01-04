@@ -1,0 +1,15 @@
+
+$gap: 30px
+$shadow: 0 3px 5px
+
+$theme-colors: () !default
+$theme-colors: map-merge(("ghost":$white,"primary": $primary, "secondary":  $secondary, "success":    $success,"info":       $info,"warning":    $warning,"danger": $danger,"light": $light,"dark": $dark), $theme-colors)
+
+$colors: () !default
+$colors: map-merge(("primary": $primary,"white": white,"grey": $grey,"black": #000 ,"red":$red, "orange": $orange, "yellow": $yellow, "green": $green, "teal": $teal, "blue": $blue, "indigo": $indigo,"purple": $purple, "pink": $pink), $colors)
+// $text-colors: () !default
+// $text-colors: map-merge(("white": #fff,"black": #000, "primary":$primary,"red":$red,"orange":$orange,"yellow":$yellow,"green":$green,"teal":$teal,"blue":$blue), $text-colors)
+$positions: () !default
+$positions: map-merge(("t":top,"b":bottom,"l":left,"r":right),$positions)
+$image-ratios: () !default
+$image-ratios: map-merge(("1-1":1/1,"1-2":1/2,"3-4":3/4,"9-16":9/16), $image-ratios)

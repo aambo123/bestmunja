@@ -1,0 +1,28 @@
+
+[2020-12-31 00:46:59] [info] [user]: userId: 104, username: Super admin, login.
+[2020-12-31 01:18:10] [info] [user]: userId: 104, username: Super Admin, logout.
+[2020-12-31 01:18:43] [info] [user]: userId: 163, username: reseller1, login.
+[2020-12-31 01:41:02] [info] [user]: userId: 163, username: reseller1, logout.
+[2020-12-31 01:41:07] [info] [user]: userId: 104, username: Super admin, login.
+[2020-12-31 01:57:08] [info] [user]: userId: 104, username: Super Admin, logout.
+[2020-12-31 01:57:17] [info] [user]: userId: 163, username: reseller1, login.
+[2020-12-31 02:06:05] [info] [user]: userId: 165, username: aaa, login.
+[2020-12-31 02:06:15] [info] [user]: userId: 165, username: aaa, logout.
+[2020-12-31 02:06:24] [info] [user]: userId: 163, username: reseller1, login.
+[2020-12-31 02:13:42] [info] [user]: userId: 163, username: reseller1, logout.
+[2020-12-31 02:13:46] [info] [user]: userId: 165, username: aaa, login.
+[2020-12-31 02:14:43] [info] [user]: userId: 165, username: aaa, logout.
+[2020-12-31 02:14:47] [info] [user]: userId: 104, username: Super admin, login.
+[2020-12-31 03:53:55] [info] [user]: userId: 104, username: Super Admin, logout.
+[2020-12-31 03:54:00] [info] [user]: userId: 163, username: reseller1, login.
+[2020-12-31 03:54:24] [info] [user]: userId: 104, username: Super admin, login.
+[2020-12-31 03:55:31] [info] [user]: userId: 104, username: Super Admin, logout.
+[2020-12-31 03:55:41] [info] [user]: userId: 165, username: aaa, login.
+[2020-12-31 03:56:22] [info] [user]: userId: 165, username: aaa, logout.
+[2020-12-31 03:56:28] [info] [user]: userId: 104, username: Super admin, login.
+[2020-12-31 03:56:51] [info] [user]: userId: 104, username: Super Admin, logout.
+[2020-12-31 03:56:58] [info] [user]: userId: 165, username: aaa, login.
+[2020-12-31 07:15:31] [info] [user]: userId: 163, username: reseller1, logout.
+[2020-12-31 07:19:41] [info] [user]: userId: 104, username: Super admin, login.
+[2020-12-31 07:24:57] [info] [user]: userId: 104, username: Super Admin, logout.
+[2020-12-31 07:25:03] [info] [user]: userId: 166, username: reseller1, login.

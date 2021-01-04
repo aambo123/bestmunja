@@ -1,0 +1,16 @@
+
+[2021-01-03 05:34:51] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-03 06:06:09] [info] [user]: userId: 166, username: reseller1, logout.
+[2021-01-03 06:06:14] [info] [user]: userId: 104, username: Super admin, login.
+[2021-01-03 06:55:26] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-03 16:06:11] [info] [message]: userId: 166, username: reseller1, message id: 1, Filter has been operated.
+[2021-01-03 16:06:11] [info] [message]: userId: 166, username: reseller1, refund: -2, Cash out has been completed.
+[2021-01-03 07:09:30] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-01-03 07:09:34] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-03 07:22:54] [info] [user]: userId: 166, username: reseller1, logout.
+[2021-01-03 07:23:01] [info] [user]: userId: 167, username: user1, login.
+[2021-01-03 07:23:19] [info] [user]: userId: 167, username: user1, logout.
+[2021-01-03 07:23:23] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-03 08:10:36] [info] [user]: userId: 167, username: user1, login.
+[2021-01-03 17:10:52] [info] [message]: userId: 167, username: user1, message id: 2, Filter has been operated.
+[2021-01-03 17:10:52] [info] [message]: userId: 167, username: user1, refund: -3, Cash out has been completed.

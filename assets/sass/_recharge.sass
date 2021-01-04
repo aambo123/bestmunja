@@ -1,0 +1,96 @@
+.recharge_con
+     +respond-to(medium)
+          height: 100%
+     padding-top: 120px
+     padding-bottom: 30px  
+.recharge_wrapper
+     background: #fff
+     +radius(4px)
+     box-shadow: 0px 3px 6px rgba(black,0.05)
+     padding-left: 20px
+     padding-right: 20px
+     padding-top: 20px
+     padding-bottom: 10px
+     h1
+          font-size: 36px
+          +respond-to-down(small)
+               font-size: 21px
+     p
+          font-size: 18px
+          margin-bottom: 40px
+          span
+               color: $primary
+     .add_wrapper
+          margin-top: 40px
+          $space: 10px
+          display: -webkit-flex
+          display: -ms-flex
+          display: flex
+          flex-wrap: wrap
+          +mx(-$space)
+          +respond-to-down(small)
+               +mx(-$space/2)
+          li
+               flex: 0 0 25%
+               max-width: 25%
+               +px($space)
+               +respond-to-down(small)
+                    +px($space/2)
+               div
+                    cursor: pointer
+                    margin-bottom: $space*2
+                    display: flex
+                    align-items: center
+                    color: #fff
+                    font-size: 14px
+                    +px(10px)
+                    +py(7px)
+                    +respond-to-down(small)
+                         margin-bottom: $space
+                         +px(5px)
+                         +py(3px)
+                    svg
+                         margin-right: 10px
+                         +respond-to-down(small)
+                              margin-right: 0
+                    &.add
+                         background: $primary
+                    &.refresh
+                         background: #707070
+.recharge_box
+     width: 100%
+     padding-left: 100px
+     +respond-to-down(medium)
+          padding-left: 15px
+          padding-right: 15px
+     .price
+          opacity: .6
+          display: flex
+          font-size: 18px
+          font-weight: 700
+          margin-bottom: 10px
+          span
+               margin-left: auto
+     .total
+          margin-top: 20px
+          display: flex
+          align-items: center
+          flex-wrap: wrap
+          +py(30px)
+          font-size: 20px
+          border-top: 2px solid $color
+          font-weight: 700
+          span
+               font-size: 140%
+          .message
+               font-weight: 400
+               span
+                    font-size: 18px
+     .total_message
+          font-weight: 500
+          padding: 20px
+          padding-top: 10px
+          +radius(4px)
+          background: #CCECFF
+          box-shadow: 0px 3px 6px rgba(#CCECFF,.8)
+          margin-bottom: 30px

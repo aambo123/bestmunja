@@ -1,0 +1,67 @@
+.table
+     width: 100%
+     text-align: center
+     &.disabled
+          opacity: .6
+     thead
+          tr
+               border: 1px solid $border-color
+               border-right: 0
+               border-left: 0
+          td,th
+               border-bottom-width: 2px
+          th
+               +py(10px)
+               font-size: 14px
+               font-weight: 500
+               letter-spacing: 0.06em
+               opacity: .6
+               text-align: left
+               vertical-align: middle
+               background: #f6f9fc
+               &:first-child
+                    padding-left: 26px
+     tbody
+          tr
+               border-bottom: 1px solid $border-color
+               &:hover
+                    box-shadow: 0px 5px 6px rgba(#009BFA,.16)
+                    background: lighten(#dff2ff,5)
+               &.checked
+                    text-decoration: line-through
+               &[data-link]:hover
+                    cursor: pointer
+          td
+               font-size: 14px
+               +py(1rem)
+               text-align: left
+               &:first-child
+                    padding-left: 26px
+
+
+     td,th
+          padding: .75rem
+          vertical-align: middle
+.result_top
+     //border-bottom: 1px solid #ddd
+     //padding-bottom: 12px
+     padding-top: 30px
+.result_bot
+     padding-top: 24px
+.table_action
+     display: flex
+     align-items: center
+     flex-wrap: wrap
+     button+button
+          margin-left: 20px
+     ul
+          margin-left: auto
+     +respond-to-down(small)
+          justify-content: center
+          ul
+               order: 1
+               flex: 0 0 100%
+               max-width: 100%
+               margin-bottom: 30px
+          button
+               order: 2

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+     <head>
+          <meta charset="utf-8">
+          <title>Sass playground</title>
+          <link rel="stylesheet" href="src/css/style.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css">
+          <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+          <script src="slick-1.8.1/slick/slick.js" charset="utf-8"></script>
+     </head>
+     <body>
+          <nav class="navbar">
+               <div class="container">
+                    <div class="row">
+                         <img src="src/images/khandid-blue.svg" alt="" class="brand col-2">
+                         <div class="menu-wrapper col-10">
+                              <ul class="menu col-6">
+                                   <li class="has-dropdown"><a href="#">About us</a></li>
+                                   <li><a href="#">Mkit</a></li>
+                                   <li><a href="#">News</a></li>
+                                   <li><a href="#">Contact</a></li>
+                                   <li><a href="#">고객지원</a></li>
+                              </ul>
+                              <ul class="social col-2">
+                                   <li>
+                                        <a href="#">
+                                             <img src="src/images/kakaotalk.svg" alt="" >
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="#">
+                                             <img src="src/images/instagram.svg" alt="">
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="#">
+                                             <img src="src/images/blog.svg" alt="">
+                                        </a>
+                                   </li>
+                              </ul>
+                         </div>
+                    </div>
+               </div>
+          </nav>
+          <section class="hero">
+               <div class="carousel" style="background-image:url(src/images/image1.png)">
+                    <div class="container txt-white">
+                                   <h1>GLOBAL IT의 미래를 만들어가는 KHANDID INC입니다.</h1>
+                                   <h4>IT의 미래, KHANDID가 최적의 솔루션과 혁신적 기술로 만들어 갑니다.</h4>
+                                   <a href="#" class="btn ghost outline mt-4">read more</a>
+
+                    </div>
+               </div>
+               <div class="carousel" style="background-image:url(src/images/image1.png)">
+                    <div class="container txt-white">
+                                   <h1>GLOBAL IT의 미래를 만들어가는 KHANDID INC입니다.</h1>
+                                   <h4>IT의 미래, KHANDID가 최적의 솔루션과 혁신적 기술로 만들어 갑니다.</h4>
+                                   <a href="#" class="btn ghost outline mt-4">read more</a>
+
+                    </div>
+               </div>
+
+
+          </section>
+     </body>
+     <script type="text/javascript">
+          $('.hero').slick({
+               infinite:true,
+               arrows:false,
+               dots:true
+          });
+     </script>
+</html>

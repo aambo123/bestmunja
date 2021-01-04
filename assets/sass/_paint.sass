@@ -1,0 +1,26 @@
+@each $color, $value in $colors
+     .bg-#{$color}
+          background-color: lighten($value, 0%)
+          color: choose-contrast-color(darken(lighten($value, 0%), 20%)) !important
+          border-color: darken($value, 10%)
+     .txt-#{$color}
+          color: $value
+     .bg-gradient-#{$color}
+          background: linear-gradient(87deg, lighten($value,20) 0, $value 100%) !important
+          color: choose-contrast-color(darken(lighten($value, 0%), 20%)) !important
+     @for $i from 1 to 10
+          @if lighten($value, 6% * (10 - $i))!=white
+               .bg-#{$color}-#{$i*10}
+                    background-color: lighten($value, 6% * (10 - $i))
+                    color: choose-contrast-color(darken((lighten($value, 6% * (10 - $i))), 20%))
+                    border-color: lighten($value, 2% * (10 - $i))
+          @if darken($value, 6% * ($i))!=black
+               .bg-#{$color}-#{$i*10+100}
+                    background-color: darken($value, 8% * ($i))
+                    color: choose-contrast-color(darken($value, 11% * ($i)))
+                    border-color: darken($value, 10% * ($i))
+          @if lighten($value, 8% * (10 - $i))!=white
+               .txt-#{$color}-#{$i*10}
+                    color: lighten($value, 8% * (10 - $i))
+.shadow
+     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1)

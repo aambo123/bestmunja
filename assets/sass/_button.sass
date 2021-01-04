@@ -1,0 +1,93 @@
+@import color
+
+.btn
+     text-shadow: none
+     display: inline-block
+     text-transform: uppercase
+     text-decoration: none
+     font-size: 1rem
+     +px(1.4rem)
+     +py(.6rem)
+     border-width: 1px
+     border-style: solid
+     outline: none
+     text-align: center
+     white-space: nowrap
+     +ease-in-out(.1s)
+     +radius(3px)
+     &:not(:disabled):not(.disabled)
+          cursor: pointer
+          &:hover
+               +translatey(-1px)
+          &:hover:focus,&:active
+               +translatey(-1px)
+     background-color: $dark-grey
+     color: choose-contrast-color($dark-grey)
+     &-lg
+          +py(1rem)
+          +respond-to-down(small)
+               +py(.7rem)
+     &-sm
+          font-size: 14px
+          +py(.2rem)
+          +px(.6rem)
+     &.wide
+          width: 100%
+     &.neutral
+          background: #fff
+          color: $primary
+.btn.outline
+     color: $dark-grey
+     background-color: transparent
+     border: 1px solid $dark-grey
+.btn.outline:disabled,.btn.outline.disabled
+     background-color: transparent  !important
+     border-color: $grey
+     color: $grey
+.btn.rounded
+     border-radius: 2rem
+.btn:disabled,.btn.disabled
+     background-color: darken($light-grey, 25%)
+     cursor: not-allowed
+
+@each $color, $value in $theme-colors
+     .btn.#{$color}
+          color: choose-contrast-color(darken($value, 20%))
+          background-color: $value
+          border-color: $value
+          box-shadow: 0 4px 6px rgba($value,.11), 0 1px 3px rgba(0,0,0,.08)
+          &:active
+               background-color: darken($value, 8%)
+          &:hover
+               box-shadow: 0 7px 14px rgba($value,.1), 0 3px 6px rgba(0,0,0,.08)
+     .btn.#{$color}:disabled,.btn.#{$color}.disabled
+          background-color: lighten($value, 25%)
+          cursor: not-allowed
+     .btn.outline.#{$color}
+          border: 1px solid $value
+          color: $value
+          background-color: transparent
+          &:not(:disabled):not(.disabled):hover
+               background: $value
+               color: choose-contrast-color(darken($value,20%))
+          &:hover:focus,&:active
+               background-color: darken($value, 8%)
+     .btn.outline.#{$color}:disabled,.btn.outline.#{$color}.disabled
+          color: lighten($value, 25%)
+          border-color: lighten($value, 25%)
+          cursor: not-allowed
+button.close
+     padding: 0
+     background-color: transparent
+     border: 0
+     -webkit-appearance: none
+     -moz-appearance: none
+     appearance: none
+.close
+     float: right
+     font-size: 1.5rem
+     font-weight: 700
+     line-height: 1
+     color: #000
+     text-shadow: 0 1px 0 #fff
+     opacity: .5

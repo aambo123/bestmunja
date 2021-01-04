@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300">
+     <defs>
+          <style>.cls-1{fill:#0072ce;}.cls-2{fill:url(#linear-gradient);}.cls-3{fill:#66aae2;}</style>
+          <linearGradient id="linear-gradient" x1="-53.92" y1="21.08" x2="356.74" y2="431.74" gradientUnits="userSpaceOnUse">
+             <stop offset="0" stop-color="#66aae2"/>
+             <stop offset="0.26" stop-color="#4f9dde"/>
+             <stop offset="0.82" stop-color="#157dd2"/>
+             <stop offset="1" stop-color="#0072ce"/>
+          </linearGradient>
+     </defs>
+     <title>khandid-white</title>
+     <g id="Layer_2" data-name="Layer 2">
+          <g id="Layer_1-2" data-name="Layer 1">
+               <path class="cls-2" d="M267.73,267.73,150,150,75,75,32.27,32.27C20.35,20.35,0,28.81,0,45.64V150l75,75,75,75H254.36C271.19,300,279.65,279.65,267.73,267.73Z"/>
+               <path class="cls-3" d="M254.36,0H150L75,75,0,150V254.36c0,16.83,20.35,25.29,32.27,13.37L75,225l75-75L267.73,32.27C279.65,20.35,271.19,0,254.36,0Z"/>
+          </g>
+     </g>
+</svg>

@@ -1,0 +1,36 @@
+.filter
+
+.tab
+     position: relative
+     display: flex
+     margin-bottom: 5px
+     &::before
+          content: ''
+          width: 0px
+          background: $primary
+          display: inline-block
+          transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1)
+     &::after
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 0
+          background: lighten($primary, 40)
+          display: inline-block
+          transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1)
+          z-index: -1
+     &:not(.active):hover
+          &::before
+               width: 5px
+          &::after
+               width: 100%
+     &.active
+          background: $primary
+          color: #fff
+          font-weight: 500
+     a
+          padding: 8px 14px
+          display: block
+          flex: 1 0 auto

@@ -1,0 +1,386 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+.bgbody{
+  position: relative;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 70vh !important;
+}
+
+.mainbg {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../images/login.jpg);
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.lfw{
+  position: absolute;
+  right: 0;
+  width: 30vw;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.login-left{
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide{
+  color: #ffffff;
+  font-size: 42px;
+}
+
+.login-right{
+  height: 100vh;
+  background-color: #ffffff;
+  padding-left: 100px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-form-container{
+  width: 100%;
+}
+
+.login_title {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.telegram img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.telegram p span {
+  font-size: 15px;
+}
+
+.logged-telegram {
+  width: 360px !important;
+}
+
+/* SMS Add */
+.recharge_box {
+  padding-top: 100px;
+}
+
+
+
+/* Scroll bar */
+.scrolling-box {
+  display: block;
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+/* Status blue */
+.recipient-list .status.blue::before {
+  background: #009bfa;
+}
+
+.custom_pos {
+  width: 250px !important;
+}
+
+.message-count {
+  /* position: absolute;
+  top: 16%;
+  right: 61px;
+  width: 78%; */
+  margin-top: 30px;
+  color: #004085;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgb(204, 229, 255);
+  border-color:#b8daff;
+}
+
+.login-alert {
+  padding: 5px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgb(204, 229, 255);
+  border-color:#b8daff;
+}
+
+
+
+
+.login_box {
+  padding-top: 6%;
+}
+
+.collapsible {
+  background-color: white;
+  color: black;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible i {
+  font-size: 16px;
+  padding-right: 9px;
+  color: #009bfa;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  
+}
+
+.content p {
+  padding: 5px;
+}
+
+.login-notice-detail-link {
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  font-weight: bold; 
+  padding-top: 10px;
+  line-height: 30px;
+}
+
+.padding-top-30 {
+  padding-top: 30px;
+}
+
+.card_header hr {
+  border-top: 1px solid #cacaca;
+}
+
+.card_header {
+  padding: 20px 26px;
+  border-bottom: none;
+}
+
+.login_box {
+  position: relative !important;
+}
+
+.notice_card_header{
+  font-size: 20px; border-bottom: 1px solid #ddd;
+}
+
+
+.telegram-static {
+  display: -webkit-box;
+  position: unset;
+  margin: 0 auto 20px auto;
+}
+
+.telegram-static-main {
+  display: flex;
+}
+
+.error_user_add {
+  color: #e43a45;
+  font-size: 15px;
+  font-family: AUTO;
+}
+
+.app-footer {
+  margin-top: 50px;
+}
+
+.grey-bold {
+  background-color: #607d8b;
+  color: white;
+}
+
+.orange {
+  background-color: #FF9900;
+  color: white;
+}
+
+.dashboard-stat .details .desc {
+  color: white;
+}
+
+.dashboard-stat .details .number {
+  color: white;
+}
+
+.dashboard-stat .visual > i {
+  color: white;
+  opacity: 0.1;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .telegram {
+    width: auto !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+  .message-count {
+    margin-top: 30px;
+  }
+}
+
+/* Medium devices (991px and up) */
+@media only screen and (max-width: 991px) {
+  
+  .login-right{
+    height: auto;
+    background-color: #ffffff;
+    padding-left: 0px;
+  }
+
+  /* Login main swipper wrapper text */
+  .intro_wrapper {
+    height: 550px !important;
+  }
+
+} 
+
+/* Max Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1980px) {
+  
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  
+  .message-count {
+    margin-top: 70px !important; 
+  }
+  .phone_wrapper {
+    margin-top: 30px !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 766px) {
+
+  .phone_wrapper {
+    margin-top: 30px !important;
+  }
+}
+
+.hide1 {
+  display: block;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .hide1 {
+    display: block;
+  }
+  .swiper-slide {
+    /* font-size: 38px; */
+  }
+}
+
+.send_wrapper {
+  margin-top: 17px;
+  padding-top: 0px;
+}
+.phone_wrapper {
+  padding-top: 0px;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+
+  nav .nav_logo {
+    font-size: 20px !important;
+  }
+  nav .navbar-nav {
+    display: -webkit-box !important;
+  }
+  .balance_wrapper .balance {
+    display: none;
+  }
+  .message-count {
+    margin-top: 30px; 
+  }
+  .phone_wrapper {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 991px){
+  .mainbg {
+    height: 550px;
+  }
+  .lfw {
+    display: none;
+  }
+  .login-left{
+    height: auto;
+  }
+  
+  .login-right{
+    height: auto !important;
+    background: transparent;
+  }
+
+
+  nav .navbar-nav .nav-item.active {
+    -webkit-box-flex: 0.8 !important;
+    flex: 1 !important;
+    white-space: nowrap;
+  }
+  nav .navbar-nav .nav-item:not(.active) {
+    -webkit-box-flex: 1 !important;
+    flex: 1 !important;
+  }
+  nav .navbar-nav .nav-link {
+    font-size: 12px !important;
+  }
+  .page {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 766px) {
+  .telegram-static {
+    border: 1px solid #ddd !important;
+    font-size: 14px;
+  }
+
+  .telegram-static img {
+    width: 40px;
+    margin: 10px;
+  }
+
+  .telegram-static h3, .telegram p {
+    display: block;
+  }
+}
+
+.footer-copyright {
+  margin-top: 20px;
+}

@@ -1,0 +1,20 @@
+.pagination
+     +flexbox
+     +radius(.25rem)
+     justify-content: center
+     li
+          border-radius: 2px
+          text-align: center
+          height: 30px
+          a
+               color: #444
+               display: inline-block
+               font-size: 1
+               padding: 0 10px
+               line-height: 30px
+          &.active
+               background: $primary
+               a
+                    color: white
+          .material-icons
+               vertical-align: middle

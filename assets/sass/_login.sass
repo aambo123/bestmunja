@@ -1,0 +1,132 @@
+.main_wrapper
+     position: absolute
+     left: 0
+     top: 0
+     width: 100%
+     height: 100vh
+     z-index: 0
+     &.with_image
+          background-image: url(../images/login.jpg)
+          background-size: auto 100%
+          background-position: left
+          background-repeat: no-repeat
+.left_wrapper
+     //animation: fadeInUp 2s paused
+     background: #fff
+     position: fixed
+     //transform: translateX(100%)
+     &.show
+          animation-play-state: running
+     +respond-to-down(medium)
+          width: 100%
+          left: 0
+          bottom: 0
+          padding-top: 40px
+          padding-bottom: 100px
+          position: initial
+     +respond-to(medium)
+          $width: 470px
+          width: calc( #{$width} + ((100vw - 930px) / 2))
+          height: 100vh
+          top: 0
+          right: 0
+          .login_box
+               max-width: $width
+          $width1: 420px
+          .recharge_box
+               max-width: $width1
+     +respond-to(large)
+          $width: 470px
+          width: calc( #{$width} + ((100vw - 1170px) / 2))
+          .login_box
+               max-width: $width
+          $width1: 400px
+          .recharge_box
+               max-width: $width1
+
+     display: flex
+     flex-direction: column
+     justify-content: center
+     .login_box
+          width: 100%
+          padding-left: 100px
+          +respond-to-down(medium)
+               +px($gap)
+          .login_title
+               font-size: 30px
+               font-weight: 700
+               margin-bottom: 40px
+@keyframes fadeInUp
+     from
+          transform: translate3d(0, 100%, 0)
+     to
+          transform: translate3d(0,0,0)
+.swiper-container
+     width: 100%
+     .swiper-slide
+          //text-align: center
+          //font-size: 18px
+          //background: #fff
+          display: flex
+          align-items: center
+          justify-content: center
+
+.intro_wrapper
+     height: 100%
+     display: flex
+     flex-direction: column
+     align-items: center
+     justify-content: center
+     .intro_box
+          width: 100%
+          //display: flex
+          //overflow: hidden
+          h1
+               //flex: 0 0 100%
+               word-break: keep-all
+               font-size: 50px
+               font-weight: 700
+               color: #fff
+               margin-bottom: $gap
+               +respond-to-down(small)
+                    font-size: 30px
+                    text-align: center
+
+
+          h4
+               font-size: 28px
+               font-weight: 300
+               color: #fff
+               +respond-to-down(small)
+                    font-size: 18px
+                    text-align: center
+.telegram
+     position: fixed
+     bottom: 20px
+     right: 100px
+     display: flex
+     align-items: center
+     border: 1px solid #ddd
+     border-radius: 4px
+     padding: 12px 20px
+     background: #fff
+     z-index: 2
+     +respond-to-down(small)
+          padding: 0
+          border: 0
+          background: transparent
+          bottom: 90px
+          right: 20px
+     img
+          width: 50px
+          margin-right: 20px
+          +respond-to-down(small)
+               width: 60px
+               margin-right: 10px
+     h3,p
+          margin: 0
+          +respond-to-down(small)
+               display: none
+          span
+               text-transform: uppercase
+               font-weight: 600

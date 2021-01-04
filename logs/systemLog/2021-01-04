@@ -1,0 +1,20 @@
+
+[2021-01-04 02:26:44] [info] [user]: userId: 104, username: Super admin, login.
+[2021-01-04 02:27:25] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-01-04 02:27:30] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-04 02:29:36] [info] [user]: userId: 166, username: reseller1, logout.
+[2021-01-04 02:29:46] [info] [user]: userId: 104, username: Super admin, login.
+[2021-01-04 02:30:38] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-01-04 02:30:50] [info] [user]: userId: 104, username: Super admin, login.
+[2021-01-04 02:31:40] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-01-04 02:31:44] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-04 02:31:59] [info] [user]: userId: 166, username: reseller1, logout.
+[2021-01-04 02:32:08] [info] [user]: userId: 104, username: Super admin, login.
+[2021-01-04 02:32:40] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-01-04 02:32:46] [info] [user]: userId: 167, username: user1, login.
+[2021-01-04 02:33:07] [info] [user]: userId: 167, username: user1, logout.
+[2021-01-04 02:33:11] [info] [user]: userId: 166, username: reseller1, login.
+[2021-01-04 02:42:42] [info] [user]: userId: 166, username: reseller1, logout.
+[2021-01-04 02:42:48] [info] [user]: userId: 104, username: Super admin, login.
+[2021-01-04 02:45:13] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-01-04 02:50:14] [info] [user]: userId: 166, username: reseller1, login.
