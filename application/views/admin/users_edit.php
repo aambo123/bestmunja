@@ -162,10 +162,13 @@
 							</div>
 							<div class="col-12 col-sm-6">
                              <select class="form-control" name="mb_recommend" id="recommendation">
-									<?php foreach ($rec_code as $rec){ ?>
+                                    <?php
+                                    $price = 0;
+                                    foreach ($rec_code as $rec){ ?>
 										<?php 
 										if($rec->rec_id == $user->mb_recommend)
 										{ 
+                                            $price = $rec->msg_price;
 											$selected = "selected";
 										} else {
 											$selected = "";
@@ -229,10 +232,10 @@
 						<!-- Quantity -->
 						<div class="form-group row">
 							<div class="col-12 col-sm-3 text-right">
-								<label class="my-2" for="cash">잔여 캐쉬</label>
+								<label class="my-2" for="cash">남은 건수</label>
 							</div>
 							<div class="col-12 col-sm-6">
-								<?php echo $user->msg_quantity; ?>
+								<?php echo number_format($user->msg_quantity / 1, 0, ",", ",").' 건' ;?>
 							</div>
 						</div>
 						<!-- /Quantity -->
@@ -287,7 +290,7 @@
 				<div class="portlet-title">
 					<div class="caption">
 						<i class="icon-info font-green"></i>
-						<span class="caption-subject font-green sbold uppercase">케시 지급</span>
+						<span class="caption-subject font-green sbold uppercase">건수 지급</span>
 					</div>
 				</div>
 				<!-- Portlet body -->
@@ -297,7 +300,7 @@
 						<!-- Title -->
 						<div class="col-sm-2">
 							<label class="control-label">
-								케시 부여
+                            건수 부여
 							</label>
 						</div>
 						<!-- /Title -->
@@ -307,7 +310,26 @@
 							<input type="number" class="form-control" id="charge" name="" value="">
 						</div>
 						<button type="button" class="btn success" onclick="admin_charge()" name="button">확인</button>
+                        <span id="totPrice"></span>
 						<!-- /Recharge -->
+                        <script>
+                            function addComma(n) {
+                                var reg = /(^[+-]?\d+)(\d{3})/; // 정규식
+                                n += '';  						// 숫자를 문자열로 변환
+
+                                while (reg.test(n))
+                                    n = n.replace(reg, '$1' + ',' + '$2');
+
+                                return n;
+                            }
+                            $('#charge').keyup(function(){
+                                var val = $(this).val();
+                                var price = <?php echo $price;?>;
+                                var calc = price*1*val*1;
+                                console.log('price :>> ', price);
+                                $('#totPrice').text(addComma(calc)+'원');
+                            })
+                        </script>
 					</div>
 				</div>
 				<!-- /Portlet body -->
@@ -341,9 +363,9 @@
 								<th class="text-center"><?php echo $total--;?></th>
 								<td>
 									<?php if ($row->type == null || $row->type == 0){ ?>
-									<?php echo number_format($row->total_price).' 원('.number_format($row->num_send).' Cash)' ?>
+									<?php echo number_format($row->total_price).' 원('.number_format($row->num_send).' 건)' ?>
 									<?php } elseif ($row->type == 1) {?>
-									<?php echo number_format($row->num_send).' Cash)' ?>
+									<?php echo number_format($row->num_send).' 건' ?>
 									<?php } ?>
 
 								</td>
@@ -374,7 +396,7 @@
 				<!-- Caption -->
 				<div class="caption">
 					<i class="icon-info font-green"></i>
-					<span class="caption-subject font-green sbold uppercase">현금 이력</span>
+					<span class="caption-subject font-green sbold uppercase">차감 이력</span>
 				</div>
 				<!-- /Caption -->
 
@@ -385,8 +407,8 @@
 						<thead>
 							<tr>
 								<th style="text-align:center">ID</th>
-								<th style="text-align:center">현금</th>
-								<th style="text-align:center">환불하다/현금 인출</th>
+								<th style="text-align:center">건수</th>
+								<th style="text-align:center">차감 이력</th>
 								<th style="text-align:center">체계</th>
 								<th style="text-align:center">작성일</th>
 							</tr>

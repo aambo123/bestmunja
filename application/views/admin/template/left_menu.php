@@ -52,14 +52,7 @@
                 </a>
 
             </li>
-            <li class="nav-item <?php if($current == 'settings'){ echo 'start active open';} ?>">
-                <a href="/admin/settings" class="nav-link nav-toggle">
-                    <i class="icon-settings"></i>
-                    <span class="title">계좌정보</span>
-                    <span class="arrow"></span>
-                </a>
-
-            </li>
+           
             <?php if($this->session->userdata('user_level') == 'Super admin') {?>
             <li class="nav-item <?php if($current == 'smsAccount'){ echo 'start active open';} ?>">
                 <a href="/admin/smsAccount_list" class="nav-link nav-toggle">

@@ -72,7 +72,7 @@
 									<th width="20%">회원아이디</th>
 									<th width="15%">상태</th>
 									<th width="12%">충전금액</th>
-									<th width="12%">CASH</th>
+									<th width="12%">충전건수</th>
 									<!-- <th width="12%">Reseller cash change</th> -->
 									<th width="10%">승인 된 사용자</th>
 									<th width="14%">날짜</th>

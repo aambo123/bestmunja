@@ -51,7 +51,7 @@
 									<th style="text-align: center" width="">회원아이디</th>
 									<th style="text-align: center" width="">발신번호</th>
 									<th style="text-align: center" width="">메시지</th>
-									<th style="text-align: center" width="7%">모든 전화 번호</th>
+									<th style="text-align: center" width="7%">발송</th>
 									<th style="text-align: center" width="7%">성공</th>
 									<!-- <th width="7%">확인불가</th> -->
 									<th style="text-align: center" width="7%">대기 중</th>
@@ -117,7 +117,7 @@
 					</div>
 					<div class="row">
 						<label class="col-md-12 ">
-							<h3 class="font-green bold">모든 전화 번호 <button class="btn blue"><?php echo $sms_results->quantity; ?></button></h3>
+							<h3 class="font-green bold">발송<button class="btn blue"><?php echo $sms_results->quantity; ?></button></h3>
 						</label>
 						<div class="scrolling-box">
 							<?php 

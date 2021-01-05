@@ -303,7 +303,7 @@
 
 										<th width="8%">금일</th>
 										<th width="8%">전체</th>
-										<th width="8%">남은 CASH</th>
+										<th width="8%">잔여 건수</th>
 
 										<th width="10%">등록일</th>
 										<th width="10%">표시 / 편집 / 삭제</th>

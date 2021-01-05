@@ -44,22 +44,27 @@
 					<div class="balance_wrapper ml-auto">
 
 						<span class="balance">
-							Balance :
                             <?php
-                               
-								if ($user != null) {
-                                    echo number_format($user->msg_quantity / 1, 0, ",", ",").' 건';
-								}
+                                if($this->session->userdata('user_level') != 'Super admin'){
+                                    $send_cnt = number_format($user->msg_quantity / 1, 0, ",", ",").' 건';
+                                    $name = $this->session->userdata('user_name');
+                                    $member = $this->users_model->get_user_one($this->session->userData('id'));
+                                    $price =  $this->settings_model->get_recommendation_one_by_id($member->mb_recommend);
+                                    $msg = "{$name} 남은건수 : {$send_cnt} (1건당 {$price->msg_price}원)";
+                                     if ($user != null) {
+                                         echo  $msg;
+                                     }
+                                }
 								
 								?>
 						</span>
-						<span class="balance">
+						<!-- <span class="balance">
 							<?php
 								if($this->session->userdata('user_level') == 'Super admin'){
 									echo "Total Balance: ".$account_limit->msg_limit_count."";
 								}
 							?>
-						</span>
+						</span> -->
 						<a href="<?php echo base_url() ?>users/smsAdd" class="btn outline btn-sm primary">충전</a>
 					</div>
 					<?php } else {  ?>

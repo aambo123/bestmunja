@@ -365,7 +365,7 @@
 									<th style="text-align: center" width="4%">발신번호</th>
 									<th style="text-align: center" width="3%">SMS count</th>
 									<th style="text-align: center" width="24%">메시지</th>
-									<th style="text-align: center" width="7%">모든 전화 </th>
+									<th style="text-align: center" width="7%">발송 </th>
 									<th style="text-align: center" width="7%">성공</th>
 									<!-- <th width="7%">대기</th>
 <th width="7%">확인불가</th> -->

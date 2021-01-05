@@ -36,8 +36,8 @@
                                    <div class="card_body">
                                         <div class="row">
                                              <div class="col">
-                                                  <h5 class="my-0 upper text-muted">잔여 Cash</h5>
-                                                  <span class="h2 bold"><?php echo number_format($user->msg_quantity); ?></span>
+                                                  <h5 class="my-0 upper text-muted">남은 건수</h5>
+                                                  <span class="h2 bold"><?php echo number_format($user->msg_quantity).' 건'; ?></span>
                                              </div>
                                              <div class="col-auto">
                                                   <div class="icon bg-gradient-green">
@@ -69,7 +69,7 @@
                          <div class="col-sm-12">
                               <div class="card">
                                    <div class="card_header">
-                                        <h3 class="my-0">현금 이력</h3>
+                                        <h3 class="my-0">차감 이력</h3>
                                    </div>
                                    <div class="card_body">
                                         <?php
@@ -78,8 +78,8 @@
                                                   <thead>
                                                        <tr>
                                                             <th>ID</th>
-                                                            <th>현금</th>
-                                                            <th>환불하다/현금 인출</th>
+                                                            <th>건수</th>
+                                                            <th>차감 이력</th>
                                                             <th>체계</th>
                                                             <th>작성일</th>
                                                        </tr>
@@ -175,9 +175,9 @@
                                                        </h5>
                                                        <h2 class="my-0">
                                                             <?php if ($log->type == 1){ ?>
-                                                                 <?php echo number_format($log->num_send) ?> Cash</h2>
+                                                                 <?php echo number_format($log->num_send) ?> 건</h2>
                                                             <?php } else { ?>
-                                                                 <?php echo number_format($log->num_send) ?> Cash<span class="small">(<?php echo number_format($log->total_price) ?>₩)</span></h2>
+                                                                 <?php echo number_format($log->num_send) ?> 건<span class="small">(<?php echo number_format($log->total_price) ?>원)</span></h2>
                                                             <?php } ?>
                                                   </div>
                                                   <div class="col-auto">

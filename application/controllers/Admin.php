@@ -2639,7 +2639,9 @@ class Admin extends CI_Controller {
 		$user_one = $this->users_model->get_user_one($id);
 		$reseller_revenue = NULL;
 		$reseller_cash_change = NULL;
-		
+        $member_recommendation = $this->settings_model->get_recommendation_one_by_id($user_one->mb_recommend);
+        $member_msg_price = $member_recommendation->msg_price;
+        $member_msg_num = floor($cash / $member_msg_price);
 		/* RESELLER PAYMENT START */
 		if ($this->session->userdata('user_level') == 'Reseller'){
 			
@@ -2652,9 +2654,7 @@ class Admin extends CI_Controller {
 			$msg_num = floor($reseller_msg_quantity / $msg_price);
 
 			// Get customer's requested quantity and number
-			$member_recommendation = $this->settings_model->get_recommendation_one_by_id($user_one->mb_recommend);
-			$member_msg_price = $member_recommendation->msg_price;
-			$member_msg_num = floor($cash / $member_msg_price);
+			
 
 			// Check message price
 			if($member_msg_price > $cash){
@@ -2676,7 +2676,7 @@ class Admin extends CI_Controller {
 					'approve_date' => $date,
 					'approve_id' => $this->session->userData('id'),
 					'type' => 1,
-					'total_price'=>$cash,
+					'total_price'=>$cash*$member_msg_price,
 				);
 				$request_id = $this->users_model->smsAddRequestSave($message_request);
 
@@ -2748,7 +2748,7 @@ class Admin extends CI_Controller {
 				'approve_id' =>$this->session->userData('id'),
 				'approve_date' =>$date,
 				'type' => 1,
-				'total_price'=>$cash,
+				'total_price'=>$cash*$member_msg_price,
 			);
 			$request_id = $this->users_model->smsAddRequestSave($data4);
 
