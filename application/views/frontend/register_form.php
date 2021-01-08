@@ -15,7 +15,7 @@ if($this->session->userData('id')){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-	<link rel="stylesheet" href="/assets/css/blue.css?v=3.0">
+	<link rel="stylesheet" href="/assets/css/style.css?v=3.0">
 
 	<!-- Best munja custom css -->
 	<link rel="stylesheet" href="/assets/css/custom.css?v=3.0">
@@ -128,15 +128,7 @@ if($this->session->userData('id')){
 
 						</form>
 
-						<div class="padding-top-30">
-							<a class="telegram telegram-static" href="https://t.me/smsmaster">
-								<img src="/assets/images/telegram.png" alt="">
-								<div>
-									<h3>가입상담</h3>
-									<p><span>Telegram id:</span> smsmaster</p>
-								</div>
-							</a>
-						</div>
+					
 						<!-- /Skype section -->
 					</div>
 				</div>

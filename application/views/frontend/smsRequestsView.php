@@ -52,7 +52,6 @@
 
 							echo '<li class="grid-item info"><div class="status blue" style="width: 174px;">';
 							echo '<span class=number>' . $nb->phone_number . '</span>';
-							echo '<span  class="status-label" style="background: #009bfa">대기</span>';
 							echo '</div></li>';
 						}
 					?>
@@ -64,7 +63,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<!-- Success shipping -->
-				<h1 class="h1 mb-3">발송 <span class="txt-green bold"><?php echo $message_detail->delivered_count;?></span></h1>
+				<h1 class="h1 mb-3">성공 <span class="txt-green bold"><?php echo $message_detail->delivered_count;?></span></h1>
 
 				<ul class="recipient-list grid mt-4">
 					<?php

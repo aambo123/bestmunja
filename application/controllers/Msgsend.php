@@ -336,15 +336,15 @@ class Msgsend extends CI_Controller {
 
 			if ($f > 0 ){
 				// Insert to cash_history
-				$data10 = array(
-					'member_id' => $memberInfoVo->mb_id,
-					'message_id'	=>	$insert_id,
-					'cash' => ('+'. $f*$rec_info->msg_price),
-					'success' => 'Success',
-					'system' => 'System',
-					'created_date' => date('Y-m-d H:i:s')
-				);
-				$this->users_model->cash_history_add($data10);
+				// $data10 = array(
+				// 	'member_id' => $memberInfoVo->mb_id,
+				// 	'message_id'	=>	$insert_id,
+				// 	'cash' => ('+'. $f*$rec_info->msg_price),
+				// 	'success' => 'Success',
+				// 	'system' => 'System',
+				// 	'created_date' => date('Y-m-d H:i:s')
+				// );
+				// $this->users_model->cash_history_add($data10);
 			}
 
 			
@@ -357,11 +357,10 @@ class Msgsend extends CI_Controller {
 			
 			// if has failed number give back cash certain user
 			if ($f > 0 ){
-                
-				$data4 = array(
-					'msg_quantity' => $failed_quantity,
-				);
-				$this->users_model->user_update($memberInfoVo->mb_id, $data4);	
+				// $data4 = array(
+				// 	'msg_quantity' => $failed_quantity,
+				// );
+				// $this->users_model->user_update($memberInfoVo->mb_id, $data4);	
 			}
 			
 

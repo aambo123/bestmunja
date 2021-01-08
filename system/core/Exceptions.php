@@ -116,7 +116,7 @@ class CI_Exceptions {
 	 * @param 	bool	$log_error	Whether to log the error
 	 * @return	void
 	 */
-	public function show_404($page = '', $log_error = TRUE)
+	public function show_404($msg = '찾을 수 없는 페이지입니다.',$page = '', $log_error = TRUE)
 	{
 		if (is_cli())
 		{
@@ -125,8 +125,8 @@ class CI_Exceptions {
 		}
 		else
 		{
-			$heading = 'хуудас олдсонгүй';
-			$message = 'Tаны дарсан холбоос эвдэрсэн эсвэл хуудас устгагдсан байна.';
+			$heading = $msg;
+			$message = '';
 		}
 
 		// By default we log this, but allow a dev to skip it

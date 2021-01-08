@@ -1116,6 +1116,8 @@ class Admin extends CI_Controller {
 	 */
   public function user_edit($id)
 	{
+        
+
 		$current = 'users';
 
 		$template['menu'] = $this->menu($current);
@@ -1124,7 +1126,7 @@ class Admin extends CI_Controller {
 		$data['month_count'] = $this->users_model->get_month_count($id);
 		$data['all_count'] = $this->users_model->get_all_count($id);
 		$data['user'] = $this->users_model->get_user_one($id);
-
+        
 		$total = $this->users_model->count_recharge($id);
 		$total1 = $this->users_model->get_cash_history_rows($id);
 		

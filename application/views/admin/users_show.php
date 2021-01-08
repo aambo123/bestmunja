@@ -112,7 +112,7 @@
 						<!-- Quantity -->
 						<div class="form-group row">
 							<div class="col-12 col-sm-3 text-right">
-								<label class="my-2" for="cash">잔여 캐쉬</label>
+								<label class="my-2" for="cash">남은 건수</label>
 							</div>
 							<div class="col-12 col-sm-6">
 								<?php echo $user->msg_quantity; ?>
@@ -159,7 +159,7 @@
 						<thead>
 							<tr>
 								<th class="text-center">No</th>
-								<th class="text-center">결제금액(충전 CASH)</th>
+								<th class="text-center">결제금액(충전 건수)</th>
 								<th class="text-center">결제방법</th>
 								<th class="text-center">결제일</th>
 								<th class="text-center">결제 상테</th>
@@ -206,7 +206,7 @@
 				<!-- Caption -->
 				<div class="caption">
 					<i class="icon-info font-green"></i>
-					<span class="caption-subject font-green sbold uppercase">현금 이력</span>
+					<span class="caption-subject font-green sbold uppercase">차감 이력</span>
 				</div>
 				<!-- /Caption -->
 
@@ -217,8 +217,8 @@
 						<thead>
 							<tr>
 								<th style="text-align:center">ID</th>
-								<th style="text-align:center">현금</th>
-								<th style="text-align:center">환불하다/현금 인출</th>
+								<th style="text-align:center">건수</th>
+								<th style="text-align:center">차감 이력	</th>
 								<th style="text-align:center">체계</th>
 								<th style="text-align:center">작성일</th>
 							</tr>

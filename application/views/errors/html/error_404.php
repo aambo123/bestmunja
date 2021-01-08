@@ -83,7 +83,7 @@ text-align: center;
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
 		<p class="link">
-			<a href="/">Нүүр хуудас</a>-руу очих
+			<a href="/">홈으로 가기</a>
 		</p>
 	</div>
 </body>

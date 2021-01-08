@@ -39,7 +39,7 @@
                                 <span class="font-red-mint bold">*</span>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="hidden" name="msg_price" value="<?php if(isset($_POST['msg_price'])){ echo "".$_POST['msg_price'].""; }else{ echo $recommendation->msg_price;} ?>">
+                                <input type="hidden" name="rec_id" value="<?php if(isset($_POST['rec_id'])){ echo "".$_POST['rec_id'].""; }else{ echo $recommendation->rec_id;} ?>">
                                 <input required class="form-control sett" type="text" name="msg_price" id="msg_price" value="<?php echo $recommendation->msg_price; ?>" required >
                                 <?php
                                 echo "<span style='color: #ff0000; font-size: 11px;'>";

@@ -1375,7 +1375,7 @@ class Users_model extends CI_Model{
 		
 		$this->db->where('mb_level !=', "Super admin");
 		$this->db->limit($per_pg, $offset);
-		$this->db->order_by('mb_id','desc');
+		$this->db->order_by('mb_datetime','desc');
 		$query = $this->db->get();
 
 		// print_r($per_pg);
