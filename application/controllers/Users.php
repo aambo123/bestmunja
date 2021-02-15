@@ -1212,8 +1212,12 @@ class Users extends CI_Controller {
 
 
 			$seven_bit_msg = $this->input->post('body');
-
-			$text_array = $this->mb_str_split($seven_bit_msg,70);
+			$charPer = 70;
+			$charCount =strlen($seven_bit_msg);
+			if( $charCount > 70){
+				$charPer = 67;
+			}
+			$text_array = $this->mb_str_split($seven_bit_msg,$charPer);
 			$split_count = sizeof($text_array);
 			$count = sizeof($text_array) * $phone_count;
 

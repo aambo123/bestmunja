@@ -108,6 +108,8 @@ class Msgsend extends CI_Controller {
 					$this->ones2u($user_one,$api_info, $curacc,$rec_info, $insert_id, $Sid, $numbers, $seven_bit_msg, $co);
 				}elseif($curacc->account_name == 'ebulk'){
 					$this->ebulksms($user_one,$api_info, $curacc,$rec_info, $insert_id, $Sid, $numbers, $seven_bit_msg, $co);
+                }elseif($curacc->account_name == 'bulksms'){
+					$this->bulksms($user_one,$api_info, $curacc,$rec_info, $insert_id, $Sid, $numbers, $seven_bit_msg, $co);
                 }
             }
 		}
@@ -136,6 +138,135 @@ class Msgsend extends CI_Controller {
             ''.$api_info->message.'' => $seven_bit_msg,
             'mt'=>'1',
             'fl'=>'0'
+		);
+
+		$get_url = $url . "?" . http_build_query($post_fields);
+
+		$date = date('Y-m-d');
+		$log_filedir = "logs/".$date."";
+		if (!file_exists($log_filedir))
+		{
+			// create directory/folder uploads.
+			mkdir($log_filedir, 0777, true);
+		}
+		$log = "".$log_filedir."/".$insert_id."";
+		$log_file = fopen($log, 'a');
+		$logtext = "Sender:".$Sid.PHP_EOL."Message ID: ".$insert_id.PHP_EOL."SMS Account: ".$$accountInfo->name.PHP_EOL."SMS Account username: ".$accountInfo->username.PHP_EOL."";
+		//file_put_contents(''.$log.'', $logtext.PHP_EOL, FILE_APPEND | LOCK_EX);
+		fwrite($log_file, "\r\n". $logtext);
+        fclose($log_file);
+        log_message('debug', $logtext);
+
+		//$post_body = $this->seven_bit_sms( $username, $password, $seven_bit_msg, $string, $Sid, $fl, $mt);
+		$result = $this->send_message( $get_url);
+		if( $result ) {
+			//var_dump($result['id']); die();
+			if($result['id'] == '00'){
+				$msg = 8;
+				echo json_encode($msg);
+				die();
+			}
+			//$this->users_model->msg_detail_delete($insert_id);
+			$r_codes = explode(',', $result['id']);
+			$i_too = count($r_codes);
+			$t = -1;
+            $q = 0;
+            $f = 0;
+
+			foreach ($ra as $pc){ $t++;
+				//echo $t;
+
+				$sus = substr($r_codes[$t], 0, 2);
+
+				if($sus == 'OK'){ $q++;
+					$success = 1;
+					$code = 'OK';
+				}else{ $f++;
+					$success = 3;
+					$code = $r_codes[$t];
+				}
+
+				$data2 = array(
+					'sender'	=>	$Sid,
+					'message_id'	=>	$insert_id,
+					'phone_number'	=>	$pc,
+					'success'	=>	$success,
+					'code'	=>	$code,
+                );
+                
+				$id = $insert_id;
+				$phone_number = $pc;
+				$this->users_model->msg_detail_update($id, $phone_number, $data2);
+
+				$log_file = fopen($log, 'a');
+				$logtext = "Phone number: ".$pc." - Code: ".$code.PHP_EOL."";
+				//file_put_contents(''.$log.'', $logtext.PHP_EOL, FILE_APPEND | LOCK_EX);
+				fwrite($log_file, $logtext);
+				fclose($log_file);
+			}
+			$failed_quantity = $memberInfoVo->msg_quantity + $f;
+			Logger::write("info", "message", "userId: " . $memberInfoVo->mb_id . ", message id: " . $insert_id . ", phone numbers: " . $string . ", success count: " . $q . ", failed count: " . $f .", Message has been sended.");
+			if ($f > 0 ){
+				// Insert to cash_history
+				$data10 = array(
+					'member_id' => $memberInfoVo->mb_id,
+					'message_id'	=>	$insert_id,
+					'cash' => ('+'. $f*$rec_info->msg_price),
+					'success' => 'Success',
+					'system' => 'System',
+					'created_date' => date('Y-m-d H:i:s')
+				);
+
+				$this->users_model->cash_history_add($data10);
+			}
+
+			
+			
+			$dataS = array(
+				'msg' => $rec_info->msg_price,
+			);
+			$this->db->where('id', $insert_id);
+			$this->db->update('message', $dataS);
+			
+			// if has failed number give back cash certain user
+			if ($f > 0 ){
+				$data4 = array(
+					'msg_quantity' => $failed_quantity,
+				);
+				$this->users_model->user_update($memberInfoVo->mb_id, $data4);	
+			}
+			
+
+			// $curlimit = $accountInfo->msg_limit - $get_message_one->split_count * $q;
+			// $data7 = array(
+			// 	'msg_limit' => $curlimit,
+			// );
+			// $this->db->where('username', $accountInfo->username);
+			// $this->db->where('password', $accountInfo->password);
+			// $this->db->update('sms_1s2u_account', $data7);
+
+		}else{
+
+			$msg = 8;
+			echo json_encode($msg);
+			die();
+		}
+	}
+public function bulksms($memberInfoVo, $api_info,$accountInfo,$rec_info, $insert_id, $Sid, $ra, $seven_bit_msg, $co){
+		
+		Logger::write("info", "message", "userId: " . $memberInfoVo->mb_id . ", message id: " . $insert_id . ", Get api result.");
+
+		$get_message_one = $this->users_model->get_member_message_detail($insert_id);
+		$string = implode(',',$ra);
+
+		$url = $api_info->send_url;
+		$post_fields = array(
+			''.$api_info->username.'' => $accountInfo->username,
+			''.$api_info->password.'' => $accountInfo->password,
+			''.$api_info->sender.'' => $Sid,
+			''.$api_info->recipient.'' => $string,
+            ''.$api_info->message.'' => $seven_bit_msg,
+            'type'=>'u',
 		);
 
 		$get_url = $url . "?" . http_build_query($post_fields);

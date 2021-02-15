@@ -39,7 +39,7 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="/users/smsSend" style="color: #fff; margin-top: 19px; font-size: 20px;">
-				<span class="logo-default">1STBULK</span>
+				<span class="logo-default">GHOSTSMS</span>
 
 			</a>
 			<div class="menu-toggler sidebar-toggler">

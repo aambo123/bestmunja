@@ -28,6 +28,7 @@ class Admin extends CI_Controller {
 				$this->load->model('users_model');
 				$this->load->model('settings_model');
 				$this->load->model('notices_model');
+				$this->load->model('popup_model');
 				$this->load->model('links_model');
 				$this->load->model('codes_model');
 				$this->load->helper('text');
@@ -1127,6 +1128,9 @@ class Admin extends CI_Controller {
 		$data['all_count'] = $this->users_model->get_all_count($id);
 		$data['user'] = $this->users_model->get_user_one($id);
         
+        // if($data['user']->reseller_code != $this->session->userData("user_name")){
+        //     show_404('권한 없습니다. ');
+        // }
 		$total = $this->users_model->count_recharge($id);
 		$total1 = $this->users_model->get_cash_history_rows($id);
 		
@@ -2991,14 +2995,14 @@ class Admin extends CI_Controller {
 						$date = date('Y-m-d H:i:s');
 						$last_order = $this->settings_model->get_sms_account_one_last_order();
 						$order = $last_order->order + 1;
-						
+						$api = $this->settings_model->get_api_one($this->input->post('api_name'));
 						$datas = array(
 							'name' => $this->input->post('api_name'),
 							'username' => $this->input->post('z_id'),
 							'password' => $this->input->post('z_password'),
 							'created_date' => $date,
 							'msg_limit' => $this->input->post('msg_limit'),		
-							'account_name' => '1s2u',
+							'account_name' => $api->name,
 							'order' => $order,
 						);
 						$datas2 = array(
@@ -4006,5 +4010,77 @@ class Admin extends CI_Controller {
         $sql = "SELECT * FROM recommendation WHERE REC_CODE = ?";
         $query = $this->db->query($sql,$code);
         echo json_encode($query->num_rows());
+	}
+	
+	
+	/**
+	 * notice index
+	 *
+	 * @param $data
+	 * @return notice
+	 */
+	public function popup($msg=null)
+	{
+		$data['msg'] = $msg;
+		$current = 'popup';
+		$template['menu'] = $this->menu($current);
+
+		$data['list'] = $this->popup_model->list();
+		$data['main_content'] = '/popup_list.php';
+
+		$this->load->view('admin/template/main_template', $data);
+	}
+
+	public function popupAdd($id = null)
+	{
+		$current = 'popup';
+		$template['menu'] = $this->menu($current);
+		$data['vo'] = $this->popup_model->getPopupOne($id);
+	
+		$data['main_content'] = '/popup_write';
+
+		$this->load->view('admin/template/main_template', $data);
+	}
+
+	public function popup_proc(){
+		
+		$this->form_validation->set_rules('subject', '제목', 'trim|required');
+		$this->form_validation->set_rules('link_url', '링크', 'trim|required');
+		$this->form_validation->set_rules('start_dt', '시작일', 'trim|required');
+		$this->form_validation->set_rules('end_dt', '종료일', 'trim|required');
+		$this->form_validation->set_rules('body', '내용', 'trim|required');
+		if ($this->form_validation->run() == FALSE) {
+				$current = 'popup';
+				$template['menu'] = $this->menu($current);
+				$data['main_content'] = '/popup_write';
+				$this->load->view('admin/template/main_template', $data);
+		} else {
+			$data = $this->input->post();
+			$data["reg_user"] = $this->session->userdata('id');
+			unset($data["popup_seq"]);
+			unset($data["button"]);
+			if($this->input->post("popup_seq") == ""){
+				$this->popup_model->save($data);
+			}else{
+				$this->popup_model->update($this->input->post("popup_seq"),$data);
+			}
+			redirect('/admin/popup/' . $msg = "success_added" . '');
+		}
+	}
+
+	public function popup_upload (){
+        $config['upload_path'] = 'upload/popup/'; //give the path to upload the image in folder
+        $config['allowed_types'] = '*';
+        $config['max_size']	= '10000';
+        $config['overwrite'] = false;
+        $config['encrypt_name'] = TRUE;
+        $this->load->library('upload');
+        $this->upload->initialize($config);
+        $this->upload->do_upload('image');
+        $image_data = $this->upload->data();
+        $fileName = $image_data['file_name'];
+        $response = new StdClass;
+        $response->link = "/upload/popup/" . $fileName;
+        echo stripslashes(json_encode($response));
     }
 }
