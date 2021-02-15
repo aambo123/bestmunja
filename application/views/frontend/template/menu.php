@@ -53,28 +53,19 @@
 			<div class="container">
 				
 				<span class="balance">
-				Balance :
 				<?php
-					if ($user != null) {
-						echo $user->msg_quantity;
-					}
-					
-					// Get customers quantity
-					
-					$member = $this->users_model->get_user_one($this->session->userData('id'));
-					$price =  $this->settings_model->get_recommendation_one_by_code($member->mb_recommend);
-
-					if($price != null){
-						echo " / ". floor($user->msg_quantity / $price->msg_price);
-					}
-					?>
-				</span>
-				<span class="balance">
-				<?php
-					if($this->session->userdata('user_level') == 'Super admin'){
-						echo "Total Balance: ".$account_limit->msg_limit_count."";
-					}
-				?>
+                                if($this->session->userdata('user_level') != 'Super admin'){
+                                    $send_cnt = number_format($user->msg_quantity / 1, 0, ",", ",").' 건';
+                                    $name = $this->session->userdata('user_name');
+                                    $member = $this->users_model->get_user_one($this->session->userData('id'));
+                                    $price =  $this->settings_model->get_recommendation_one_by_id($member->mb_recommend);
+                                    $msg = "{$name} 남은건수 : {$send_cnt} (1건당 {$price->msg_price}원)";
+                                     if ($user != null) {
+                                         echo  $msg;
+                                     }
+                                }
+								
+								?>
 				</span>
 				<a href="<?php echo base_url() ?>users/smsAdd" class="btn  btn-sm danger">충전</a>
 			</div>

@@ -9,7 +9,7 @@
 	<title>로그인 | 글로벌문자</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/custom.css?v=3.0">
+	<link rel="stylesheet" href="/assets/css/custom.css">
 	<link rel="stylesheet" href="/assets/src/js/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/assets/css/swiper.min.css">
 	<script src="/assets/src/js/jquery-1.8.3.min.js"></script>

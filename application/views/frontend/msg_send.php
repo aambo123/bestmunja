@@ -23,7 +23,7 @@
 
 			<div class="col-md-6">
 					<div class="message-count" style="display: none;">
-						입력한 문자가 70자를 넘어가면 매 70자마다 추가로 과금이 됩니다.
+                    입력한 문자가 70자를 넘어가면 매 67자 마다 추가로 과금이 됩니다. 
 					</div>
 				<div class="phone_wrapper">
 					<div class="phone">

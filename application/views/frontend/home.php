@@ -13,13 +13,13 @@
         $('header').addClass("fixed");
         $('.app-footer').addClass("fixed");
     })
+    var vid = document.getElementById("loading");
     if(GetCookie("loadingPlayed") != "false"){
         $("#loading").addClass("playing");
+        vid.play();
     }else{
         $("#loading").remove();
     }
-    var vid = document.getElementById("loading");
-    vid.play();
     vid.addEventListener('ended', function(e) {
         vid.pause()
         vid.currentTime = 0;

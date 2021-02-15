@@ -1,4 +1,5 @@
 <title><?php echo $general_info->site_name; ?></title>
+<link rel="icon"type="image/png" href="<?php echo base_url(); ?>upload/meta/<?php echo $general_info->image; ?>">
 <meta name="title" content="<?php echo $general_info->website_title; ?>">
 <meta name="keywords" content="<?php echo $general_info->keywords; ?>">
 <meta name="description" content="<?php echo $general_info->description; ?>">

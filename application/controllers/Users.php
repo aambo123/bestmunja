@@ -1213,7 +1213,7 @@ class Users extends CI_Controller {
 
 			$seven_bit_msg = $this->input->post('body');
 			$charPer = 70;
-			$charCount =strlen($seven_bit_msg);
+            $charCount = mb_strlen($seven_bit_msg, "UTF-8");
 			if( $charCount > 70){
 				$charPer = 67;
 			}
