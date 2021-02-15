@@ -12,7 +12,7 @@
 
 	<div class="container">
 		<div class="footer-copyright">
-			<p class="font-weight-bold txt-center">© 2019 - <?php echo date('Y');?> 1stBulk. ALL RIGHTS RESERVED.</p>
+			<p class="font-weight-bold txt-center">© 2019 - <?php echo date('Y');?> WORLD-BULK. ALL RIGHTS RESERVED.</p>
 		</div>
 	</div>
 </footer>

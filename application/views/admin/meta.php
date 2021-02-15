@@ -112,7 +112,7 @@
                          <?php if ($meta->image != null): ?>
                               <div class="form-group row ">
                                   <div class="col-12 col-sm-3 text-right">
-                                      <label class="my-2" for="id">사진</label>
+                                      <label class="my-2" for="id">파비콘</label>
                                   </div>
                                   <div class="col-12 col-sm-6">
                                        <img src="<?php echo base_url() ?>upload/meta/<?php echo $meta->image ?>" alt="" style="width:100%">
@@ -122,7 +122,7 @@
                          <div class="form-group row ">
                              <div class="col-12 col-sm-3 text-right">
 
-                                 <label class="my-2" for="id">사진 변경</label>
+                                 <label class="my-2" for="id">파비콘 변경</label>
                                  <span class="font-red-mint bold">*</span>
                              </div>
                              <div class="col-12 col-sm-6">

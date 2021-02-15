@@ -22,6 +22,12 @@
 							</div>
 							<ul class="add_wrapper">
 								<li>
+									<div class="add" data-value="5000">
+										<i data-feather="plus" width="14"></i>
+										5,000 건
+									</div>
+								</li>
+								<li>
 									<div class="add" data-value="10000">
 										<i data-feather="plus" width="14"></i>
 										10,000 건
@@ -55,12 +61,6 @@
 									<div class="add" data-value="1000000">
 										<i data-feather="plus" width="14"></i>
 										1,000,000 건
-									</div>
-								</li>
-								<li>
-									<div class="add" data-value="2000000">
-										<i data-feather="plus" width="14"></i>
-										2,000,000 건
 									</div>
 								</li>
 								<li>

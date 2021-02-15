@@ -4,7 +4,7 @@
 			<div class="col-sm-12">
 				<nav>
 					<a href="/" target="_self" class="nav_logo">
-						WORLD BULK
+						WORLDBULK
 					</a>
 					<?php 
 						if ($this->session->userdata('logged_in')) 

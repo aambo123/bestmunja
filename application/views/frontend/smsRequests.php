@@ -1,5 +1,35 @@
 <script src="<?php echo base_url(); ?>assets/src/js/SmsRequests.js"></script>
 <script src="<?php echo base_url(); ?>assets/src/js/SmsRequestView.js"></script>
+<style>
+    .overflow-ellipsis{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 600px;
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .tool{
+        position: relative;
+    }
+    .tooltip {
+        visibility: hidden;
+        /* width: 120px; */
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+    }
+
+    .tool:hover .tooltip {
+        visibility: visible;
+    }
+</style>
 
 <div class="page">
 
@@ -38,7 +68,14 @@
 						<h4 class="m-0">발송 리스트</h4>
 					</div>
 					<table class="table">
-
+                        <colgroup>
+                           <col width="5%">     
+                           <col width="">     
+                           <col width="10%">     
+                           <col width="10%">     
+                           <col width="10%">     
+                           <col width="10%">     
+                        </colgroup>
 						<thead>
 							<tr>
 								<th><label class="checkbox">
@@ -68,12 +105,16 @@
 									</label>
 								</td>
 
-								<td name="detail" class="bold" data-send-id="<?php echo $msg->id ?>">
-									<a class="">
-										<?php
+								<td name="detail" class="bold tool" data-send-id="<?php echo $msg->id ?>">
+									<a class="overflow-ellipsis">
+                                        <?php
+                                            $out = mb_strlen($msg->message) > 50 ? mb_substr($msg->message,0,50)."..." : $msg->message;
 											echo $msg->message;
 										?>
-									</a>
+                                    </a>
+                                    <span class="tooltip">
+                                    <?php echo $msg->message;?>
+                                    </span>
 								</td>
 								<td class="text-muted">
 									<small><?php echo date('d/m/Y', strtotime($msg->created_date)); ?></small>
