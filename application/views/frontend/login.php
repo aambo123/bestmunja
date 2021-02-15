@@ -91,7 +91,13 @@
 						</form>
 
 						<div class="padding-top-30">
-							
+							<a class="telegram telegram-static" href="https://t.me/1stbulk">
+								<img src="/assets/images/telegram.png" alt="">
+								<div>
+									<h3>가입상담</h3>
+									<p><span>Telegram id:</span> 1stbulk </p>
+								</div>
+							</a>
 						</div>
 						<!-- /Skype section -->
 					</div>

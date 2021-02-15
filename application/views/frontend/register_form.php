@@ -127,7 +127,15 @@ if($this->session->userData('id')){
 							<button type="submit" class="btn btn-lg primary wide" id="register_btn">회원가입</button>
 
 						</form>
-
+                        <div class="padding-top-30">
+							<a class="telegram telegram-static" href="https://t.me/1stbulk">
+								<img src="/assets/images/telegram.png" alt="">
+								<div>
+									<h3>가입상담</h3>
+									<p><span>Telegram id:</span>1stbulk </p>
+								</div>
+							</a>
+						</div>
 					
 						<!-- /Skype section -->
 					</div>
