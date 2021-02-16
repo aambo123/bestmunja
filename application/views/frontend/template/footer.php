@@ -1,13 +1,13 @@
 <div class="right-fixed">
     <a class="customer" href="https://t.me/ghostsms">
         <div class="img">
-            <img src="/assets/images/telegram.png" alt="">
+            <img src="/assets/images/customer.png" alt="">
         </div>
         <p>고객센터</p>
     </a>
     <a class="telegram" href="https://t.me/ghostsms">
         <div class="img">
-            <img src="/assets/images/customer.png" alt="">
+            <img src="/assets/images/telegram.png" alt="">
         </div>
         <p>ID : ghostsms</p>
     </a>

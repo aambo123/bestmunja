@@ -2,7 +2,7 @@
 <div class="home">
     <video muted autoplay loop id="main_video" src="/assets/main.mov"></video>
     <div class="container">
-    <h2>
+    <h2 class="txt-center">
     GhostSMS<small>는 최고의</small> 익명성<small>과</small> 보안<small>을 중요시합니다</small>
     </h2>
     </div>
