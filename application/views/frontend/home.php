@@ -1,56 +1,41 @@
-<video muted id="loading" src="/assets/loading.mp4"></video>
-<div class="home">
-    <video muted autoplay loop id="main_video" src="/assets/main.mov"></video>
+<?php $text = array(
+    "동종업계 최저가격","높은수신률과 정확한 결과 ","수신의 빠른 메시지","70글자의 여유있는 메시지","편리한 대량문자 발송","간편한 캐쉬충전"
+)?>
+<div class="main_banner">
     <div class="container">
-    <h2 class="txt-center">
-    GhostSMS<small>는 최고의</small> 익명성<small>과</small> 보안<small>을 중요시합니다</small>
-    </h2>
+        <h1>
+            24시간 발송 제한 없는 <br>
+            최저가격 국제문자 발송!
+        </h1>
+        <p>
+대량문자도 한 번의 업로드로 손 쉽게 발송 가능!
+        </p>
     </div>
 </div>
-
-<script>
-    $(function(){
-        $('header').addClass("fixed");
-        $('.app-footer').addClass("fixed");
-    })
-    var vid = document.getElementById("loading");
-    if(GetCookie("loadingPlayed") != "false"){
-        $("#loading").addClass("playing");
-        vid.play();
-    }else{
-        $("#loading").remove();
+<div class="container">
+    <div class="row">
+<?php
+    for ($x = 0; $x < count($text); $x++) {
+?>
+        <div class="col-6 col-sm-4">
+            <div class="home-col">
+                <div class="img">
+                    <img src="/assets/images/main_icon<?php echo $x+1?>.png" alt="">
+                </div>
+                <p class="">
+                    <?php echo $text[$x]?>
+                </p>
+            </div>
+        </div>
+<?php
     }
-    vid.addEventListener('ended', function(e) {
-        vid.pause()
-        vid.currentTime = 0;
-        vid.classList.remove('playing');
-        setTimeout(function() {
-            vid.parentNode.removeChild(vid);
-            $('.app-footer').addClass("fixed");
-            var expired = getDateByjQueryDateFormat('1d');
-            SetCookie("loadingPlayed", false, null, null, expired)
-        }, 2000);
-    }, false);
-
-</script>
-<style>
-    #loading.playing {
-        opacity: 1;
-        transition: opacity 3s ease;
-    }
-
-    #loading {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: auto;
-        height: 100%;
-        z-index: 100;
-        opacity: 0;
-        transition: opacity 3s ease;
-    }
-</style>
+?>
+    </div>
+</div>
+<div class="telegram-wrap">
+    <img src="/assets/images/telegram.png" alt="">
+    <h1>텔레그램 상담 ID : tagoplus</h1>
+</div>
 
 <script src="/assets/js/jquery.tmpl.min.js"></script>
 <script id="popupTmpl" type="text/x-jquery-tmpl">

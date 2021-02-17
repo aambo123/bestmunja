@@ -2,7 +2,7 @@
 	<div class="container">
 		<nav>
 			<a href="/" target="_self" class="nav_logo">
-				<img src="/assets/images/logo.png" alt="">
+				WOLRD BULK
 			</a>
 			<?php if ($this->session->userdata('logged_in')){ ?>
 				<ul class="navbar-nav">
@@ -12,31 +12,26 @@
 					<li data-href="SmsRequests" class="nav-item">
 						<a href="<?php echo base_url() ?>users/SmsRequests" class="nav-link" target="_self">결과</a>
 					</li>
+					<li data-href="smsAdd" class="nav-item">
+						<a href="<?php echo base_url() ?>users/smsAdd" class="nav-link" target="_self">충전</a>
+					</li>
 					<li data-href="notice" class="nav-item">
 						<a href="<?php echo base_url() ?>users/notice" class="nav-link" target="_self">공지사항</a>
                     </li>
-                    <li data-href="service" class="nav-item">
-						<a href="<?php echo base_url() ?>home/service" class="nav-link" target="_self">서비스소개</a>
-					</li>
 				</ul>
 				<div class="login_wrap">
 					<?php if($this->session->userdata('user_level') == 'Reseller' || $this->session->userdata('user_level') == 'Super admin'){?>
 						<a href="/admin" class="admin" target="_self">
-							<img src="/assets/images/icon_gear.png" alt="">	
+							<img src="/assets/images/gear.png" alt="">	
 						관리자</a>
 					<?php }?>
 						<a href="<?php echo base_url() ?>users/mypage" class="btn btn-sm outline" target="_self">마이페이지</a>
-						<a href="<?php echo base_url() ?>home/logout" class="btn btn-sm outline" target="_self">로그아웃</a>
+						<a href="<?php echo base_url() ?>home/logout" class="btn btn-sm" target="_self">로그아웃</a>
 				</div>
             <?php }else{?>
-                <ul class="navbar-nav">
-					<li data-href="service" class="nav-item">
-						<a href="<?php echo base_url() ?>home/service" class="nav-link" target="_self">서비스소개</a>
-					</li>
-				</ul>
 				<div class="login_wrap">
 					<a href="<?php echo base_url() ?>home/login" target="_self" class="btn btn-sm outline">로그인</a>
-					<a href="<?php echo base_url() ?>home/register_form" target="_self" class="btn btn-sm outline">회원가입</a>
+					<a href="<?php echo base_url() ?>home/register_form" target="_self" class="btn btn-sm">회원가입</a>
 				</div>
 			<?php }?>
 			<button class="menu_button">
@@ -68,7 +63,7 @@
 								
 								?>
 				</span>
-				<a href="<?php echo base_url() ?>users/smsAdd" class="btn  btn-sm danger">충전</a>
+				
 			</div>
 		</div>
 	<?php }?>
@@ -99,7 +94,6 @@
 				}
 			?>
 			</p>
-			<a href="<?php echo base_url() ?>users/smsAdd" class="btn  btn-sm danger">충전</a>
 		</div>
 		<ul>
 			<li data-href="smsSend" class="nav-item">
@@ -110,9 +104,6 @@
 			</li>
 			<li data-href="notice" class="nav-item">
 				<a href="<?php echo base_url() ?>users/notice" class="nav-link" target="_self">공지사항</a>
-			</li>
-			<li data-href="service" class="nav-item">
-				<a href="<?php echo base_url() ?>home/service" class="nav-link" target="_self">서비스소개</a>
 			</li>
 		</ul>
 		<div class="login_wrap">
@@ -125,11 +116,6 @@
 				<a href="<?php echo base_url() ?>home/logout" class="btn btn-sm" target="_self">로그아웃</a>
 		</div>
 	<?php } else{?>
-        <ul>
-			<li data-href="service" class="nav-item">
-				<a href="<?php echo base_url() ?>home/service" class="nav-link" target="_self">서비스소개</a>
-			</li>
-		</ul>
 		<div class="login_wrap">
 			<a href="<?php echo base_url() ?>home/login" target="_self" class="btn btn-sm outline">로그인</a>
 			<a href="<?php echo base_url() ?>home/register_form" target="_self" class="btn btn-sm">회원가입</a>

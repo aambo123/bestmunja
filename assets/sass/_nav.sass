@@ -1,22 +1,11 @@
 header
-     background: #000
+     background: #fff
      position: sticky
      top: 0
      z-index: 10
-     &.fixed
-          position: absolute
-          top: 0
-          left: 0
-          width: 100%
-          border-bottom: 0
-          background: transparent
-          .login_wrap
-               .btn
-                    color: #bababa
-                    border-radius: #bababa
-          .balance_wrapper
-               background: transparent
-               border: #bababa
+     .nav_logo
+          font-size: 34px
+          font-weight: bold
 .home
      position: relative
      width: 100%
@@ -96,7 +85,7 @@ nav
                display: flex
                align-items: center
                margin-right: 15px !important
-               color: #bababa
+               color: #000
                img
                     margin-right: 4px
      ul
@@ -105,19 +94,20 @@ nav
                display: none
           li
                +px(20px)
-               font-size: 18px
+               font-size: 20px
                line-height: 1
-               color: #bdbdbd
+               color: #000
                &.active
                     color: $primary
                a
                     line-height: 1
-                    color: #bababa
+                    color: #000
 
 .balance_wrapper
      background: #f3f3f3
      +py(12px)
      border-top: 1px solid #cfcfcf
+     text-align: right
      +respond-to-down(medium)
           display: none
      span
