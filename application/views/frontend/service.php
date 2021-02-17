@@ -68,7 +68,7 @@ $bot_text = array(
         <h1 class="txt-center service-title">고스트SMS 이용하는 회원분들께 드리는 혜택</h1>
         <div class="row">
             <div class="col-sm-6 txt-center service-mid">
-                <a class="img" href="selfriend.co.kr" target="_blank">
+                <a class="img" href="https://selfriend.co.kr/" target="_blank">
                     <img src="/assets/images/self_land.png" alt="">
                 </a>
                 <h4>SNS 자동 마케팅</h4>

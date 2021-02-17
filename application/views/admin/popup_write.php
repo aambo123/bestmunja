@@ -67,7 +67,7 @@
                         
                         <div class="form-group row ">
                             <div class="col-12 col-sm-3 text-right">
-                                <label class="my-2">link</label>
+                                <label class="my-2">날짜</label>
                                 <span class="font-red-mint bold">*</span>
                             </div>
                             <div class="col-12 col-sm-3">
@@ -96,7 +96,7 @@
                         
                         <div class="form-group row ">
                             <div class="col-12 col-sm-3 text-right">
-                                <label class="my-2">body</label>
+                                <label class="my-2">내용</label>
                                 <span class="font-red-mint bold">*</span>
                             </div>
                             <div class="col-12 col-sm-6">
