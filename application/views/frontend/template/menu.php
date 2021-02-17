@@ -54,6 +54,7 @@
 				
 				<span class="balance">
 				<?php
+
                                 if($this->session->userdata('user_level') != 'Super admin'){
                                     $send_cnt = number_format($user->msg_quantity / 1, 0, ",", ",").' 건';
                                     $name = $this->session->userdata('user_name');
