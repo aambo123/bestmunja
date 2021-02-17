@@ -2,7 +2,7 @@
 	<div class="container">
 		<nav>
 			<a href="/" target="_self" class="nav_logo">
-				WOLRD BULK
+				WORLD BULK
 			</a>
 			<?php if ($this->session->userdata('logged_in')){ ?>
 				<ul class="navbar-nav">

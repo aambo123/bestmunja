@@ -39,7 +39,14 @@
                               <h4 class="m-0">발송 리스트</h4>
                          </div>
                          <table class="table">
-
+                         <colgroup>
+                           <col width="5%">     
+                           <col width="">     
+                           <col width="10%">     
+                           <col width="10%">     
+                           <col width="10%">     
+                           <col width="10%">     
+                        </colgroup>
                               <thead>
                                    <tr>
                                         <th
@@ -89,14 +96,8 @@
                                                        <span class="badge success circle" data-hover="text" data-content="성공">
                                                             <?php echo $msg->delivered_count;?>
                                                        </span>
-                                                       <span class="badge info circle" data-hover="text" data-content="대기">
-                                                            <?php echo $msg->pending_count;?>
-                                                       </span>
-                                                       <span class="badge warning circle" data-hover="text" data-content="확인 불가">
-                                                            <?php echo $msg->error_count;?>
-                                                       </span>
                                                        <span class="badge danger circle" data-hover="text" data-content="실패">
-                                                            <?php echo $msg->undelivered_count;?>
+                                                            <?php echo $msg->error_count;?>
                                                        </span>
                                                   </div>
                                              </td>
@@ -119,9 +120,9 @@
 </div>
 <div id="test"></div>
 <script type="text/javascript">
-     $( window ).on('load',function() {
-          requestResult()
-     });
+    //  $( window ).on('load',function() {
+    //       requestResult()
+    //  });
      function requestResult() {
 
           var $data = [];
