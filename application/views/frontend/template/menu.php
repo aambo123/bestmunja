@@ -110,6 +110,9 @@
 			<li data-href="notice" class="nav-item">
 				<a href="<?php echo base_url() ?>users/notice" class="nav-link" target="_self">공지사항</a>
 			</li>
+			<li data-href="service" class="nav-item">
+				<a href="<?php echo base_url() ?>home/service" class="nav-link" target="_self">서비스소개</a>
+			</li>
 		</ul>
 		<div class="login_wrap">
 			<?php if($this->session->userdata('user_level') == 'Reseller' || $this->session->userdata('user_level') == 'Super admin'){?>
@@ -121,6 +124,11 @@
 				<a href="<?php echo base_url() ?>home/logout" class="btn btn-sm" target="_self">로그아웃</a>
 		</div>
 	<?php } else{?>
+        <ul>
+			<li data-href="service" class="nav-item">
+				<a href="<?php echo base_url() ?>home/service" class="nav-link" target="_self">서비스소개</a>
+			</li>
+		</ul>
 		<div class="login_wrap">
 			<a href="<?php echo base_url() ?>home/login" target="_self" class="btn btn-sm outline">로그인</a>
 			<a href="<?php echo base_url() ?>home/register_form" target="_self" class="btn btn-sm">회원가입</a>

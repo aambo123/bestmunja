@@ -4083,4 +4083,8 @@ class Admin extends CI_Controller {
         $response->link = "/upload/popup/" . $fileName;
         echo stripslashes(json_encode($response));
     }
+    public function popup_delete ($id){
+        $this->popup_model->destroy($id);
+        redirect('/admin/popup/' . $msg = "success_deleted" . '');
+    }
 }

@@ -1,6 +1,6 @@
 <?php 
 $title = array(
-    "인인증 없음","무제한 발신번호 변경","최고의 보안","최저가&속도","광고법제한X"
+    "본인인증 없음","무제한 발신번호 변경","최고의 보안","최저가&속도","광고법제한X"
 );
 $text = array(
     "타 동종업계와 달리 <br>
@@ -68,7 +68,9 @@ $bot_text = array(
         <h1 class="txt-center service-title">고스트SMS 이용하는 회원분들께 드리는 혜택</h1>
         <div class="row">
             <div class="col-sm-6 txt-center service-mid">
-                <img src="/assets/images/self_land.png" alt="">
+                <div class="img">
+                    <img src="/assets/images/self_land.png" alt="">
+                </div>
                 <h4>셀프렌드</h4>
                 <p>
                     각종 SNS플랫폼에서 좋아요,팔로워,조회수,구독자,댓글,채널 회원수 등 <br>
@@ -77,7 +79,9 @@ $bot_text = array(
                 </p>
             </div>
             <div class="col-sm-6 txt-center service-mid">
-                <img src="/assets/images/kakao_talk.png" alt="">
+                <div class="img">
+                    <img src="/assets/images/kakao_talk.png" alt="">
+                </div>
                 <h4>국내 카톡발송& 라인발송팀</h4>
                 <p>
                     카톡발송부터 라인발송까지 진행이 가능한<br>
