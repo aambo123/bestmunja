@@ -1,11 +1,13 @@
-@for $i from 0 to 10
-     @each $position,$value in $positions
+@each $position,$value in $positions
+     @for $i from 0 to 10
           .m#{$position}-#{$i}
                margin-#{$value}: .5rem*$i
           .p#{$position}-#{$i}
                padding-#{$value}: .5rem*$i
-          .m#{$position}-auto
-               margin-#{$value}: auto
+     .m#{$position}-auto
+          margin-#{$value}: auto
+          
+@for $i from 0 to 10
      .my-#{$i}
           +my($i*.5rem !important)
      .mx-#{$i}
@@ -18,6 +20,8 @@
           padding: $i*.5rem !important
      .m-#{$i}
           margin: $i*.5rem !important
+
+
 .mx-auto
      +mx(auto)
 .justify-between

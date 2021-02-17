@@ -13,14 +13,10 @@
      outline: none
      text-align: center
      white-space: nowrap
-     +ease-in-out(.1s)
+     border-color: $dark-grey
      +radius(3px)
      &:not(:disabled):not(.disabled)
           cursor: pointer
-          &:hover
-               +translatey(-1px)
-          &:hover:focus,&:active
-               +translatey(-1px)
      background-color: $dark-grey
      color: choose-contrast-color($dark-grey)
      &-lg
@@ -37,9 +33,9 @@
           background: #fff
           color: $primary
 .btn.outline
-     color: $dark-grey
+     color: #bababa
      background-color: transparent
-     border: 1px solid $dark-grey
+     border: 1px solid #bababa
 .btn.outline:disabled,.btn.outline.disabled
      background-color: transparent  !important
      border-color: $grey

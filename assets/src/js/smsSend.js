@@ -1,16 +1,21 @@
 $(document).ready(function () {
+
+    var msgCount = 1;
+    var charCount = msgCount > 1 ? 67 : 70;
     $('#message').on('keyup', function(){
         var countText = $(this).val().length;
-        var ct = countText / 70;
+        var ct = countText / charCount;
         var buhel = Math.ceil(ct);
         $('.inner-bytes').text(countText + ' : '+ buhel + ' SMS Message(s)');
         $('#text_lenght').val(countText);
-
-        if (countText >= 70) {
+        msgCount = buhel;
+        charCount = msgCount > 1 ? 67 : 70;
+        if (countText >= charCount) {
             $(".message-count").css("display", "block");
         } else {
             $(".message-count").css("display", "none");
         }
+        console.log(msgCount,charCount)
     });
 
     $('#btn-upload').click(function(){
@@ -140,7 +145,7 @@ $(document).ready(function () {
                         var random_number = Math.floor(Math.random() * (max - min + 1)) + min;
                         //console.log(random_number);
                         $('#sender-number').val(random_number);
-                        alert('메시지를 보냈습니다. 통신사 사정에 따라 조금 지연될수도 있습니다.');
+                        alert('귀하의 메시지를 보내려고 처리 중입니다.');
                         $('#recipient-number').val('');
                         $("#excel").val('');
 

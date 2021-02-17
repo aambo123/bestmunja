@@ -1,18 +1,21 @@
-<?php if($this->session->userData('id')){ ?>
+<div class="right-fixed">
+    <a class="customer" href="https://t.me/ghostsms">
+        <div class="img">
+            <img src="/assets/images/customer.png" alt="">
+        </div>
+        <p>고객센터</p>
+    </a>
+    <a class="telegram" href="https://t.me/ghostsms">
+        <div class="img">
+            <img src="/assets/images/telegram.png" alt="">
+        </div>
+        <p>ID : ghostsms</p>
+    </a>
+</div>
 <footer class="app-footer py-3">
-<div class="container">
-		<a class="telegram telegram-static logged-telegram" href="https://t.me/1stbulk">
-			<img src="/assets/images/telegram.png" alt="">
-			<div>
-				<h3>가입상담</h3>
-				<p><span>Telegram id:</span> 1stbulk</p>
-			</div>
-		</a>
-	</div>
-
 	<div class="container">
 		<div class="footer-copyright">
-			<p class="font-weight-bold txt-center">© 2019 - <?php echo date('Y');?> WORLD-BULK. ALL RIGHTS RESERVED.</p>
+			<p class="font-weight-bold txt-center">Copyright @ 2021 고스트SMS. All Right Reserved</p>
 		</div>
 	</div>
 </footer>
@@ -21,8 +24,6 @@
 
 </div>
 
-
-<?php } ?>
 </body>
 
 </html>

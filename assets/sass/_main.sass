@@ -1,0 +1,176 @@
+.main_1
+     background-size: cover
+     background-position: center
+     background-repeat: no-repeat
+     color: #fff
+     +py(160px)
+     +respond-to-down(small)
+          padding-top: 100px
+          padding-bottom: 60px
+     ul
+          font-size: 22px
+          opacity: .8
+          line-height: (35/22)
+          margin: 20px 0
+          +respond-to-down(small)
+               font-size: 16px
+     a
+          display: inline-block
+          padding: 21px 24px
+          border: 1px solid white
+          color: #fff
+          border-radius: 5rem
+          font-size: 18px
+          position: relative
+          padding-right: 76px
+          margin-top: 50px
+          +respond-to-down(small)
+               padding: 10px 14px
+               font-size: 14px
+               padding-right: 76px
+               margin-top: 20px
+          &::after
+               content: ''
+               border-right: 1px solid white
+               border-bottom: 1px solid white
+               +size(12px)
+               display: inline-block
+               position: absolute
+               right: 24px
+               top: 50%
+               transform: translateY(-50%) rotate(-45deg)
+          &::before
+               content: ''
+               position: absolute
+               right: 24px
+               top: 50%
+               display: inline-block
+               width: 30px
+               border-bottom: 1px solid white
+
+
+.main_2
+     +py(90px)
+     color: #000
+     p
+          margin-top: 10px
+     +respond-to-down(small)
+          +py(40px)
+          .horizontal
+               margin-bottom: 20px
+               p
+                    br
+                         display: none
+               .img-wrapper
+                    img
+                         max-width: calc(100% - 30px)
+     .vertical
+          +my(20px)
+          display: flex
+          align-items: center
+          .img
+               flex: 0 1 143px
+               max-width: 143px
+          .content
+               flex: auto
+               padding-left: 27px
+               h4
+                    +px(12px)
+                    background: $primary
+                    color: #fff
+                    display: inline-block
+                    min-width: 240px
+.img-wrapper
+     position: relative
+     padding-top: 100%
+     img
+          position: absolute
+          top: -50%
+          bottom: -50%
+          right: -50%
+          left: -50%
+          margin: auto
+          max-width: 100%
+.no-line
+     line-height: 0
+.main_3
+     background-image: url(../images/phone_back.jpg)
+     background-size: cover
+     background-position: center
+     background-repeat: no-repeat
+     +py(90px)
+     +respond-to-down(small)
+          +py(40px)
+     .col-sm-6
+          &:first-child
+               +respond-to-down(small)
+                    order: 1
+          &:last-child
+               +respond-to-down(small)
+                    order: 0
+     .phone_right
+          padding-left: 30px
+          display: flex
+          flex-direction: column
+          justify-content: center
+          height: 100%
+          +respond-to-down(small)
+               +px(15px)
+               h2,h3
+                    text-align: center
+     .message_shape
+          position: relative
+          background: #fff
+          padding: 20px
+          border-radius: 12px
+          margin-bottom: 10px
+          color: #000
+          &:first-of-type
+               margin-top: 60px
+               +respond-to-down(small)
+                    margin-top: 30px
+          &::before
+               content: ''
+               left: 0
+               transform: translateX(-100%)
+               top: 20px
+               width: 0
+               height: 0
+               position: absolute
+               border-style: solid
+               border-width: 0 30px 24px 0
+               border-color: transparent #fff transparent transparent
+
+     h2,h3
+          color: #fff
+.main_4
+     background-image: url(../images/chat.jpg)
+     background-size: cover
+     background-position: center
+     background-repeat: no-repeat
+     color: #fff
+     +py(136px)
+     +respond-to-down(medium)
+          +py(100px)
+          text-align: center
+     +respond-to-down(small)
+          +py(40px)
+     .col-sm-6
+          +respond-to-down(small)
+               text-align: center
+          &:last-child
+               +respond-to(small)
+                    text-align: right
+     a
+          display: inline-flex
+          align-items: center
+          padding: 14px 30px
+          border-radius: 5rem
+          background: #1f9cdb
+          font-size: 22px
+          +respond-to-down(medium)
+               margin-top: 30px
+          +respond-to-down(small)
+               font-size: 16px
+               img
+                    +size(30px)

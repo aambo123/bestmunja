@@ -14,13 +14,13 @@ class Home extends CI_Controller {
 	}
 
 	public function index() {
-
 		$this->user_tracking();
-			if ($this->session->userdata('logged_in')) {
-				redirect('users/smsSend');
-			}else {
-				redirect('home/login');
-			}
+		$data['main_content'] = 'frontend/home';
+		if($this->session->userdata('id')){
+			$id = $this->session->userdata('id');
+			$data['user'] = $this->users_model->get_user_one($id);
+		}
+		$this->main_template($data);
     }
     
     // public function main() {
@@ -506,6 +506,12 @@ class Home extends CI_Controller {
 				$this->db->update('visit',$data);
       }
     }
+
+    public function service(){
+		$data['main_content'] = 'frontend/service';
+		$this->main_template($data);
+    }
+	
 }
 
 /* End of file welcome.php */

@@ -35,6 +35,10 @@
 <script src="<?php echo base_url();?>assets/src/js/highcharts.js"></script>
 
 <!-- Include Editor style. -->
+<link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.6/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+<link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.6/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+
+<!-- Include JS file. -->
 <script src="<?php echo base_url();?>assets/js/datepicker.js"></script>
 <script src="<?php echo base_url();?>assets/js/datepicker.kr.js"></script>
 <!-- Best munja custom css -->
