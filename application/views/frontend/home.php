@@ -46,7 +46,9 @@
 			</button>
 		</div>
 		<div class="modal_body">
-			{{html body}} 
+			<a href="${link_url}" target="_blank">
+            {{html body}} 
+            </a>
 		</div>
 		<div class="modal_footer">
 			<a onclick="javascript:closePopupNotToday(${popup_seq});"  class="btn-link mr-auto text-sm font-weight-400">오늘 하루동안 보지 않기</a>
