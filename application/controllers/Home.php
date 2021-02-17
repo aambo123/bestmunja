@@ -509,6 +509,10 @@ class Home extends CI_Controller {
 
     public function service(){
 		$data['main_content'] = 'frontend/service';
+        if($this->session->userdata('id')){
+			$id = $this->session->userdata('id');
+			$data['user'] = $this->users_model->get_user_one($id);
+		}
 		$this->main_template($data);
     }
 	

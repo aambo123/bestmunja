@@ -78,32 +78,29 @@
 	<?php if ($this->session->userdata('logged_in')){ ?>
 		<div class="balance_wrap">
 			<p class="balance">
-			Balance :
-			<span>
 			<?php
-				if ($user != null) { echo $user->msg_quantity;}
-				
-				$member = $this->users_model->get_user_one($this->session->userData('id'));
-				$price =  $this->settings_model->get_recommendation_one_by_code($member->mb_recommend);
 
-				if($price != null){
-					echo " / ". floor($user->msg_quantity / $price->msg_price);
-				}
-				?>
-			</span>
+                                if($this->session->userdata('user_level') != 'Super admin'){
+                                    $send_cnt = number_format($user->msg_quantity / 1, 0, ",", ",").' 건';
+                                    $name = $this->session->userdata('user_name');
+                                    $member = $this->users_model->get_user_one($this->session->userData('id'));
+                                    $price =  $this->settings_model->get_recommendation_one_by_id($member->mb_recommend);
+                                    $msg = "{$name} 남은건수 : {$send_cnt} (1건당 {$price->msg_price}원)";
+                                     if ($user != null) {
+                                         echo  $msg;
+                                     }
+                                }
+								
+								?>
 			</p>
-			<p class="balance">
-			<?php
-				if($this->session->userdata('user_level') == 'Super admin'){
-					echo "Total Balance: <span>".$account_limit->msg_limit_count."</span>";
-				}
-			?>
-			</p>
-			<a href="<?php echo base_url() ?>users/smsAdd" class="btn  btn-sm danger">충전</a>
+				
 		</div>
 		<ul>
 			<li data-href="smsSend" class="nav-item">
 				<a href="<?php echo base_url() ?>users/smsSend" class="nav-link" target="_self">발송</a>
+			</li>
+			<li data-href="smsAdd" class="nav-item">
+                <a href="<?php echo base_url() ?>users/smsAdd" class="nav-link" target="_self">충전</a>
 			</li>
 			<li data-href="SmsRequests" class="nav-item">
 				<a href="<?php echo base_url() ?>users/SmsRequests" class="nav-link" target="_self">결과</a>

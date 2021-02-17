@@ -6299,7 +6299,8 @@ nav {
   background: #f3f3f3;
   padding-top: 12px;
   padding-bottom: 12px;
-  border-top: 1px solid #cfcfcf; }
+  border-top: 1px solid #cfcfcf;
+  text-align: right; }
 @media(max-width:991px) {
   .balance_wrapper {
     display: none; } }
@@ -7409,9 +7410,7 @@ textarea {
     max-width: 680px; }
   .modal.large {
     max-width: 1000px; }
-@media(max-width:766px) {
-  .modal {
-    height: 100vh; } }
+@media(max-width:766px) {}
   .modal_wrapper {
     position: fixed;
     width: 100%;

@@ -1,9 +1,9 @@
 <div class="right-fixed">
-    <a class="customer" href="https://t.me/ghostsms">
+    <a class="customer" href="https://drive.google.com/file/d/1Rj8Bh4teAZ4JY30dvg2KwVLMkvOIe9An/view">
         <div class="img">
             <img src="/assets/images/customer.png" alt="">
         </div>
-        <p>고객센터</p>
+        <p>리셀러 모집 안내 </p>
     </a>
     <a class="telegram" href="https://t.me/ghostsms">
         <div class="img">
