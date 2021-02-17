@@ -34,7 +34,7 @@
 </div>
 <div class="telegram-wrap">
     <img src="/assets/images/telegram.png" alt="">
-    <h1>텔레그램 상담 ID : tagoplus</h1>
+    <h1>텔레그램 상담 ID : 1stbulk</h1>
 </div>
 
 <script src="/assets/js/jquery.tmpl.min.js"></script>
