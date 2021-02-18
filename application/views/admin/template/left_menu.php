@@ -84,6 +84,13 @@
                     <span class="arrow"></span>
                 </a>
             </li>
+            <li class="nav-item <?php if($current == 'popup'){ echo 'start active open';} ?>">
+                <a href="/admin/popup" class="nav-link nav-toggle">
+                    <i class="icon-pie-chart"></i>
+                    <span class="title">팝업</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
             <?php }?>
             <li class="nav-item <?php if($current == 'payment'){ echo 'start active open';} ?>">
                 <a href="/admin/statisticPayment" class="nav-link nav-toggle">
@@ -93,13 +100,7 @@
                 </a>
             </li>
 
-            <li class="nav-item <?php if($current == 'popup'){ echo 'start active open';} ?>">
-                <a href="/admin/popup" class="nav-link nav-toggle">
-                    <i class="icon-pie-chart"></i>
-                    <span class="title">팝업</span>
-                    <span class="arrow"></span>
-                </a>
-            </li>
+            
 
 
         </ul>
