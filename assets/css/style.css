@@ -6219,6 +6219,9 @@ header {
     font-weight: 600;
     color: #fff;
     z-index: 1; }
+@media(max-width:991px) {
+  .home h2 {
+    font-size: 40px; } }
     .home h2 small {
       font-size: 87.5%;
       font-weight: 100; }

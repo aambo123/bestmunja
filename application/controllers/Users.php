@@ -2400,7 +2400,7 @@ class Users extends CI_Controller {
 	 * @param 
 	 * @return SmsSearch
 	 */
-	public function SmsSearch($search = "")
+	public function SmsSearch($search)
 	{
 		$id = $this->session->userdata('id');
 		$data['title'] = '결과 | 글로벌문자';

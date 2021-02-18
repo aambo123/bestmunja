@@ -29,7 +29,7 @@
 	<?php $this->load->view('frontend/template/menu') ?>
 
 	<div class="container">
-		<div class="row align-center" style="height: calc(100vh - 60px)">
+		<div class="row align-center" style="padding-top: 100px">
 			
 			<div class="col-md-6 mx-auto">
 				<div class="login-form-container">

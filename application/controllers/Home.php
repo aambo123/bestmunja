@@ -108,8 +108,8 @@ class Home extends CI_Controller {
 			$data['msg']=$msg;
 			$data['title'] = '회원 가입 | 글로벌문자';
 			$data['current'] = 'home';
-			
-			$this->load->view('frontend/register_form', $data);
+			$data['main_content'] = 'frontend/register_form';
+			$this->main_template($data);
 		}
 		
     public function check_user_id() {
@@ -509,10 +509,6 @@ class Home extends CI_Controller {
 
     public function service(){
 		$data['main_content'] = 'frontend/service';
-        if($this->session->userdata('id')){
-			$id = $this->session->userdata('id');
-			$data['user'] = $this->users_model->get_user_one($id);
-		}
 		$this->main_template($data);
     }
 	
