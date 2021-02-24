@@ -32,15 +32,17 @@
 
 .message-count {
     position: absolute;
-    left: 50%;
+    right: 50%;
     z-index: 1;
-    transform: translateX(-50%);
-    margin-top: 30px;
+    transform: translateY(-100px);
+    /* margin-top: 30px; */
     color: #004085;
     padding: 15px;
     text-align: center;
     border-radius: 8px;
     background-color: rgb(204, 229, 255);
-    border-color:#b8daff;
+    border-color: #b8daff;
+    top: 0;
+    z-index: 100;
   }
   

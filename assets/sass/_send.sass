@@ -11,38 +11,42 @@
 
 
 .phone_wrapper
+     position: relative
      .phone
           width: 100%
           position: relative
           padding: 5px
           padding-top: 50px
-          padding-bottom: 100px
           margin: auto
           +respond-to(small)
           background-image: url(../images/Phone_1.png)
           background-repeat: no-repeat
           background-position: center center
           width: 305px
-
+          line-height: 0
           textarea
                resize: none
                width: 100%
                border: 0
                background: #f3f3f3
-               height: 430px
+               height: 460px
                padding: 15px
                border-bottom: 1px solid #cccccc
+               line-height: 1.5
                &:focus
                     outline: none
 
           .inner-bytes
                position: absolute
-               bottom: 140px
-               right: 150px
+               bottom: 100px
+               right: 20px
+               text-align: right
           .buttons
                display: flex
                height: 70px
-
+               align-items: center
+               justify-content: space-around
+               +px(20px)
 .send_wrapper
      height: 100%
      display: flex

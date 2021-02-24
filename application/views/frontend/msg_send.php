@@ -20,7 +20,10 @@
                         required="required"></textarea>
                     <span class="line"></span>
                     <span class="inner-bytes">0 : 0 SMS Message(s)</span>
-                    
+                    <div class="buttons">
+                        <a href="javascript:reloadText()">새로입력</a>
+                        <a href="javascript:openSpecial()">특수문자</a>
+                    </div>
                 </div>
             </div>
 
@@ -180,4 +183,13 @@
 		}).change();
 	})
 
+
+    function reloadText(){
+        $("#message").val("").trigger("keyup")
+    }
+
+    function openSpecial(){
+        $("#special").addClass("show")
+    }
 </script>
+<?php $this->load->view('frontend/special_popup'); ?>
