@@ -3,40 +3,7 @@ if($this->session->userData('id')){
 	redirect("/users/smsSend");
 }
 ?>
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<html>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8'">
-	<title>로그인 | 글로벌문자</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-	<link rel="stylesheet" href="/assets/css/style.css">
-
-	<!-- Best munja custom css -->
-	<link rel="stylesheet" href="/assets/css/custom.css?v=3.0">
-
-	<link rel="stylesheet" href="/assets/src/js/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/assets/css/swiper.min.css">
-	<script src="/assets/src/js/jquery-1.8.3.min.js"></script>
-	<script src="/assets/src/js/jquery.menu.js"></script>
-	<script src="/assets/src/js/common.js"></script>
-	<script src="/assets/src/js/wrest.js"></script>
-	<script src="/assets/src/js/placeholders.min.js"></script>
-	<script src="/assets/js/feather.js"></script>
-	<script src="/assets/js/swiper.min.js"></script>
-
-	<?php
-    $dat['general_info'] = $this->settings_model->get_meta();
-    $this->load->view('frontend/template/meta',$dat); ?>
-</head>
-
-<body class="bgbody">
-	<?php $this->load->view('frontend/template/menu') ?>
 	<div class="mainbg"></div>
 	<div class="lfw"></div>
 
@@ -214,6 +181,3 @@ if($this->session->userData('id')){
 
 	</script>
 	<script src="<?php echo base_url(); ?>assets/js/form.js" charset="utf-8"></script>
-</body>
-
-</html>

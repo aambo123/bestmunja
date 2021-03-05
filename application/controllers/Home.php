@@ -97,7 +97,9 @@ class Home extends CI_Controller {
 			$data['msg']=$msg;
 			$data['title'] = '회원가입약관 | 글로벌문자';
 			$data['current'] = 'home';
-			$this->load->view('frontend/register', $data);
+
+			$data['main_content'] = 'frontend/register';
+			$this->main_template($data);
     }
 
     public function register_form($msg=null) {
@@ -105,8 +107,9 @@ class Home extends CI_Controller {
 			$data['msg']=$msg;
 			$data['title'] = '회원 가입 | 글로벌문자';
 			$data['current'] = 'home';
-			$this->load->view('frontend/register_form', $data);
-	}
+			$data['main_content'] = 'frontend/register_form';
+			$this->main_template($data);
+		}
 		
     public function check_user_id() {
 
