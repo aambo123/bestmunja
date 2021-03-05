@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-	<link rel="stylesheet" href="/assets/css/style.css?v=3.0">
+	<link rel="stylesheet" href="/assets/css/style.css">
 
 	<!-- Best munja custom css -->
 	<link rel="stylesheet" href="/assets/css/custom.css?v=3.0">

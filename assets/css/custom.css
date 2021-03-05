@@ -15,7 +15,7 @@ html{
 .mainbg {
   position: absolute;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-image: url(../images/login.jpg);
   background-size: cover;
   background-position: left;
