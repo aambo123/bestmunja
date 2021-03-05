@@ -1,198 +1,110 @@
+$color: #e5efff
 header
      background: #fff
-     position: sticky
-     top: 0
-     z-index: 10
-     .nav_logo
-          font-size: 34px
-          font-weight: bold
-.home
+     border-bottom: 1px solid $color
      position: relative
-     width: 100%
-     height: 100vh
-     display: flex
-     overflow: hidden
-     align-items: center
-     background: #000
-     video
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%,-50%)
-          margin: auto
-          height: 100%
+     z-index: 10
      .container
-          z-index: 1
-     h2
-          font-size: 48px
-          font-weight: 600
-          color: #fff
-          z-index: 1
-          small
-               font-size: (700%/8)
-               font-weight: 100
+          background: #fff
+     +respond-to-down(small)
+          position: fixed
+          width: 100%
 nav
+     background: #fff
      display: flex
-     flex-wrap: wrap
-     height: 77px
-     align-items: center
-     .menu_button
-          +respond-to(medium)
-               display: none
-          background: transparent
-          border: none
-          outline: none
-          position: relative
-          z-index: 11
-          &.open
-               span
-                    &:nth-child(2)
-                         transform: translateY(-50%)
-                         opacity: 0
-                    &:first-child
-                         transform: translateY(-50%) rotate(45deg)
-                    &:last-child
-                         transform: translateY(-50%) rotate(-45deg)
-                         
-          span
-               display: block
-               height: 4px
-               width: 30px
-               background: $dark-grey
-               position: absolute
-               top: 50%
-               right: 0
-               transition: all .3s ease-in
-               transform: translateY(-50%)
-               &:first-child
-                    transform: translateY(calc(-100% - 8px))
-               &:last-child
-                    transform: translateY(calc(-50% + 10px))
+     height: 60px
      .nav_logo
-          margin-right: auto
-     .login_wrap    
-          margin-left: 20px
+          align-self: center
+          font-size: 28px
+          font-weight: 800
+          text-transform: uppercase
+          color: $primary
+          +respond-to-down(medium)
+               font-size: 18px
+               flex: 0 0 100px
+               max-width: 100px
+     .navbar-nav
+          display: -webkit-flex
+          display: -ms-flex
           display: flex
+          margin-left: auto
+          flex-grow: 1
           align-items: center
-          +respond-to-down(medium)
-               display: none
-          .btn
-               min-width: 75px
-          a
-               &:not(:last-child)
-                    margin-right: 5px
-          .admin
-               display: flex
-               align-items: center
-               margin-right: 15px !important
-               color: #000
-               img
-                    margin-right: 4px
-     ul
-          display: flex
-          +respond-to-down(medium)
-               display: none
-          li
-               +px(20px)
-               font-size: 20px
-               line-height: 1
-               color: #000
+          +respond-to-down(small)
+               position: absolute
+               bottom: -1px
+               left: 0
+               transform: translateY(100%)
+               width: 100%
+               background: #fff
+               border-bottom: 1px solid $color
+               z-index: -1
+               transition: all .6s ease-in-out
+
+               justify-content: space-between
+               box-shadow: 0 3px 5px rgba(black,.069)
+               &.hide
+                    transform: translateY(0%)
+          &.show
+               transform: translateX(0)
+               box-shadow: -5px 0 50px rgba(104, 121, 146, .6)
+          .nav-item
+               padding-left: 40px
+               text-align: right
+               font-weight: 500
                &.active
                     color: $primary
-               a
-                    line-height: 1
-                    color: #000
-
-.balance_wrapper
-     background: #f3f3f3
-     +py(12px)
-     border-top: 1px solid #cfcfcf
-     text-align: right
-     +respond-to-down(medium)
-          display: none
-     span
-          position: relative
-          padding-left: 20px
-          margin-right: 20px
-          color: #bababa
-          &::before
-               position: absolute
-               width: 5px
-               height: 5px
-               background: #bababa
-               top: 50%
-               left: 0
-               transform: translateY(-50%)
-               content: ''
-               display: inline-block
 
 
-.mobile_wrap
-     position: fixed
-     top: 0
-     right: 0
-     bottom: 0
-     width: 100%
-     padding-left: 50px
-     background: rgba(0,0 ,0 ,.6 )
-     opacity: 0
-     visibility: hidden
-     transition: all .4s ease-in
-     &.open
-          opacity: 1
-          visibility: visible
-     .mobile_menu
-          background: #fff
-          width: 100%
-          height: 100%
-          padding-top: 77px
-          transition: all .4s ease-in .4s
-          .balance_wrap
-               border-bottom: 1px solid #cfcfcf
-               +px(20px)
-               padding-bottom: 20px
-               .balance
-                    font-size: 18px
-                    span
-                         float: right
-               a
-                    margin-top: 10px
-          ul
-               li
-                    height: 70px
-                    line-height: 70px
-                    +px(20px)
-                    font-size: 22px
+               +respond-to-down(small)
+                    +py(10px)
+                    padding-left: 0
+                    &:not(:first-child)
+                         position: relative
+                         &::before
+                              content: ''
+                              position: absolute
+                              height: 20px
+                              width: 1px
+                              left: 0
+                              top: 50%
+                              transform: translateY(-50%)
+                              background: $color
+                    &:not(.active)
+                         flex: 1
+                         span
+                              display: none
                     &.active
                          color: $primary
-               border-bottom: 1px solid #cfcfcf
-          .login_wrap
-               display: flex
-               padding: 20px
-               justify-content: center
-               .admin
-                    margin-right: auto !important
-               a
-                    &:not(:last-child)
-                         margin-right: 5px
-                    
-footer
-     font-size: 16px
-     
-     &.fixed
-          position: fixed
-          bottom: 0
-          left: 0
-          width: 100%
-          color: #7c7c7c
-          
-     ul
-          display: flex
-          flex-wrap: wrap
-          li
-               &:not(:last-child)
-                    margin-right: 15px
-                    padding-right: 15px
-                    position: relative
+                         font-weight: 500
+                         flex: 2
+                         position: relative
+                         svg
+                              margin-right: 12px
+                         &::after
+                              position: absolute
+                              height: 2px
+                              width: 100%
+                              content: ''
+                              left: 0
+                              bottom: 0
+                              background: $primary
 
-     
+          .nav-link
+               display: flex
+               align-items: center
+               font-size: 16px
+               justify-content: center
+               +respond-to(small)
+                    svg
+                         display: none
+          .balance
+               color: $primary
+               font-weight: 500
+               font-size: 18px
+               margin-right: 10px
+.balance_wrapper
+     display: flex
+     align-items: center
+     .balance
+          margin-right: 20px

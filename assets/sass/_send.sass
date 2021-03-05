@@ -1,57 +1,65 @@
 .send_main
      width: 100%
-     .send_wrap
-          padding-top: 40px
-          display: flex
-          +respond-to-down(medium)
-               flex-direction: column
-          //flex-wrap: wrap
-     .phone_wrapper,.send_wrapper
-          +px(50px)
+     +respond-to(medium)
+          height: 100vh
+     +respond-to-down(small)
+          padding-top: 105px
 
 
 .phone_wrapper
-     position: relative
+     width: 100%
+     height: 100%
+     display: -webkit-flex
+     display: -ms-flex
+     display: flex
+     align-items: center
+     padding-top: 40px
      .phone
           width: 100%
           position: relative
-          padding: 5px
-          padding-top: 50px
-          margin: auto
           +respond-to(small)
-          background-image: url(../images/Phone_1.png)
-          background-repeat: no-repeat
-          background-position: center center
-          width: 305px
-          line-height: 0
+               background-image: url(../images/Phone_1.png)
+               background-repeat: no-repeat
+               background-position: center center
+               background-size: 400px auto
+               height: 720px
           textarea
                resize: none
                width: 100%
-               border: 0
-               background: #f3f3f3
-               height: 460px
-               padding: 15px
-               border-bottom: 1px solid #cccccc
-               line-height: 1.5
+               border: 1px solid #ddd
+               +respond-to(small)
+                    border: 0
+                    position: absolute
+                    top: 133px
+                    padding: 8px
+                    width: 277px
+                    height: 473px
+                    left: 221px
+               +respond-to(medium)
+                    position: absolute
+                    left: 101px
+               +respond-to(large)
+                    left: 161px
                &:focus
                     outline: none
 
           .inner-bytes
                position: absolute
-               bottom: 100px
-               right: 20px
-               text-align: right
-          .buttons
-               display: flex
-               height: 70px
-               align-items: center
-               justify-content: space-around
-               +px(20px)
+               bottom: 10px
+               right: 10px
+               +respond-to(small)
+                    bottom: 120px
+                    right: 200px
+               +respond-to(medium)
+                    right: 80px
+               +respond-to(large)
+                    right: 150px
 .send_wrapper
      height: 100%
      display: flex
      flex-direction: column
      align-items: stretch
+     padding-top: 30%
      +respond-to-down(small)
           padding-top: 0
      h1
@@ -65,6 +73,7 @@
                font-size: 20px
                text-align: center
           span
-               font-weight: bold
+               color: $primary
+               font-weight: 500
      form
           width: 100%

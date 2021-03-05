@@ -39,7 +39,7 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="/users/smsSend" style="color: #fff; margin-top: 19px; font-size: 20px;">
-				<span class="logo-default">GHOSTSMS</span>
+				<span class="logo-default"><?php echo $this->config->item("site_name") ?></span>
 
 			</a>
 			<div class="menu-toggler sidebar-toggler">
@@ -90,7 +90,7 @@
 						forceTLS: true
 					});
 
-					var channel = pusher.subscribe('lcdns');
+					var channel = pusher.subscribe('smsallline');
 					channel.bind('my-event', function (data) {
 
 						$('<div class="notif" id="notif' + data.id + '">' + data.message + ' </div>').prependTo("#message");

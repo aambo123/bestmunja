@@ -31,29 +31,31 @@
 .h-md-100
      +respond-to(medium)
           height: 100%
-
-[class^="col-"]
-     position: relative
-     width: 100%
-     +px($gap/2)
-
 @for $i from 12 to 0
+     .col-#{$i},.col-sm-#{$i},.col-md-#{$i},.col-lg-#{$i},
+          position: relative
+          width: 100%
+          +px($gap/2)
+     +respond-to(large)
+          .col-lg-#{$i}
+               +flex(100%/12 * $i)
+               max-width: 100%/12 * $i
+     +respond-to(medium)
+          .col-md-#{$i}
+               +flex(100%/12 * $i)
+               max-width: 100%/12 * $i
+     +respond-to(small)
+          .col-sm-#{$i}
+               +flex(100%/12 * $i)
+               max-width: 100%/12 * $i
+
      .col-#{$i}
           +flex(100%/12 * $i)
           max-width: 100%/12 * $i
-
-$col_size: 'sm' small,'md' medium,'lg' large
-@each $size,$breakpoint in $col_size
-     @for $i from 12 to 0
-          +respond-to($breakpoint)
-               .col-#{$size}-#{$i}
-                    +flex(100%/12 * $i)
-                    max-width: 100%/12 * $i
-
-
 .col
      max-width: 100%
-     flex: 1 0 0%
+     flex-basis: 0
+     flex-grow: 1
      +px($gap/2)
 .col-auto
      width: auto

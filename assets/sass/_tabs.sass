@@ -1,56 +1,36 @@
 .filter
 
-.tab-wrapper
+.tab
      position: relative
      display: flex
-     border-bottom: 1px solid #ccc
-     margin-bottom: 20px
-     .tab
+     margin-bottom: 5px
+     &::before
+          content: ''
+          width: 0px
+          background: $primary
+          display: inline-block
+          transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1)
+     &::after
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 0
+          background: lighten($primary, 40)
+          display: inline-block
+          transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1)
+          z-index: -1
+     &:not(.active):hover
+          &::before
+               width: 5px
+          &::after
+               width: 100%
+     &.active
+          background: $primary
+          color: #fff
+          font-weight: 500
+     a
           padding: 8px 14px
           display: block
-          flex: 0 0 100px
-          max-width: 100px
-          text-align: center
-          border: 1px solid #ccc
-          margin-bottom: -1px
-          border-top-right-radius: 4px
-          border-top-left-radius: 4px
-          &:not(:first-child)
-               border-left: 0
-          &.active
-               background: $primary
-               color: #fff
-               font-weight: 500
-               border-color: $primary
-
-
-.character
-     $color: #ccc
-     display: flex
-     flex-wrap: wrap
-     border-left: 1px solid $color
-     border-top: 1px solid $color
-     overflow: auto
-     max-height: 300px
-     &.row-5
-          li
-               max-width: 20%
-               flex: 0 0 20%
-     &.row-10
-          li
-               max-width: 10%
-               flex: 0 0 10%
-     li
-          border-right: 1px solid $color
-          border-bottom: 1px solid $color
-          a
-               display: block
-               font-size: 13px
-               height: 40px
-               text-align: center
-               line-height: 40px
-          &:hover
-               border-color: $primary
-               a
-                    background: $primary
-                    color: #fff
+          flex: 1 0 auto

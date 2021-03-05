@@ -88,7 +88,8 @@
      -ms-user-select: none
      user-select: none
 =transform($value,$amount)
-     transform: #{$value}(#{$amount})
+     -webkit-transform: $value+unquote("(")#{$amount}unquote(")")
+     transform: $value+unquote("(")#{$amount}unquote(")")
 =transform-origin ($origin)
      moz-transform-origin: $origin
      -o-transform-origin: $origin
@@ -126,6 +127,3 @@
      align-items: center
      @if $circle
           border-radius: 5rem
-=size($val)
-     width: $val
-     height: $val

@@ -1,5 +1,5 @@
 <div class="page-footer">
-    <div class="page-footer-inner"> <?php echo date('Y'); ?> &copy; 글로벌 문자
+    <div class="page-footer-inner"> <?php echo date('Y'); ?> &copy; <?php echo $this->config->item("site_name")?>
 
     </div>
 

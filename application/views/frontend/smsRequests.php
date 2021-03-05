@@ -85,6 +85,7 @@
 								<th>내용</th>
 								<th>발송시간</th>
 								<th>발신번호</th>
+								<th>메시지 수</th>
 								<th>상태</th>
 							</tr>
 						</thead>
@@ -132,16 +133,23 @@
 									<input class="send_request" type="hidden" name="" value="<?php echo $msg->id ?>">
 									<?php }; ?>
 									<div class="badge-wrapper">
-                                    <span class="badge total primary circle" data-hover="text" data-content="발송">
-                                                            <?php echo $msg->quantity;?>
-                                                       </span>
-                                                       <span class="badge success circle" data-hover="text" data-content="성공">
-                                                            <?php echo $msg->delivered_count;?>
-                                                       </span>
-                                                       <span class="badge danger circle" data-hover="text" data-content="실패">
-                                                            <?php echo $msg->error_count;?>
-                                                       </span>
-                                    </div>
+										<span class="badge total primary circle" data-hover="text" data-content="발송">
+											<?php echo $msg->quantity;?>
+										</span>
+										<span class="badge success circle" data-hover="text" data-content="성공">
+											<?php echo $msg->delivered_count;?>
+										</span>
+										<span class="badge danger circle" data-hover="text" data-content="실패">
+											<?php echo $msg->error_count;?>
+										</span>
+										<span class="badge circle" data-hover="text" data-content="보류 중" style="background: #c3c3c3">
+											<?php
+												$quantity = $msg->delivered_count + $msg->error_count;
+
+												echo $msg->quantity - $quantity;
+											?>
+										</span>
+									</div>
 								</td>
 
 							</tr>
@@ -161,62 +169,54 @@
 
 <div id="test"></div>
 <script type="text/javascript">
-	// $(window).on('load', function () {
-	// 	requestResult();
-	// 	setInterval(function () {
-	// 		count++;
-	// 		if (!stop) {
-	// 			requestResult()
-	// 		}
-	// 	}, 5000);
-	// });
+	$(window).on('load', function () {
+		requestResult();
+		setInterval(function () {
+			count++;
+			if (!stop) {
+				requestResult()
+			}
+		}, 5000);
+	});
 	var count = 0;
 	var stop = false;
 
 	function requestResult() {
+		var $data = [];
+		$el = $('.send_request');
 
-          var $data = [];
-          $el = $('.send_request');
-          var ajaxCounter = 0;
-          for (var i = 0; i < $el.length;i++) {
-               $($el[i]).next('.badge-wrapper').addClass('loading');
-               if ($el.length>0) {
-                    $.ajax({
-                         url: '/users/get_detail_old',
-                         type: "POST",
-                         async: true,
-                         cache: false,
-                         data: {id: $($el[i]).val(),},
-                         beforeSend: function(){
-                              console.time('time'+i);
-                         },
-                         success: function(data){
-                              //$('.lottie_wrapper').hide()
-                              var result = JSON.parse(data);
-                              var id;
-                              for (var j = 0; j < result.length; j++) {
-                                   id = parseInt(result[j].id);
-                                   $('tr[data-id='+id+']').find('.success').text(result[j].delivrd);
-                                   $('tr[data-id='+id+']').find('.info').text(result[j].pending);
-                                   $('tr[data-id='+id+']').find('.warning').text(result[j].error);
-                                   $('tr[data-id='+id+']').find('.danger').text(result[j].undeliv);
-                              };
-                              setTimeout(function () {
-                                   $('tr[data-id='+id+']').find('.badge-wrapper').removeClass('loading');
-                              }, 1000);
-                              ajaxCounter++;
-                              if (ajaxCounter==$el.length) {
-                                   setTimeout(function () {
-                                        requestResult();
-                                   }, 5000);
-                              }
-
-                         }
-                    });
-               };
-          };
+		if ($el.length > 0) {
+			for (var i = 0; i < $el.length; i++) {
+				$data.push($el.eq(i).val())
+			};
+			$.ajax({
+				url: '/users/get_detail_new',
+				type: "POST",
+				async: true,
+				cache: false,
+				data: {
+					id: $data,
+				},
+				success: function (result) {
+					if (result == 0) {
+						stop = true;
+					} else {
+						result = $.parseJSON(result);
+						for (var j = 0; j < result.length; j++) {
+							id = parseInt(result[j].message_id);
+							$('tr[data-id=' + id + ']').children('.details').children('.badge-wrapper').find('.success').text(
+								result[j].delivered_count);
+							$('tr[data-id=' + id + ']').children('.details').children('.badge-wrapper').find('.danger').text(
+								result[j].error_count);
+						};
+					}
 
 
-     };
+				}
+			})
+		}
+
+
+	};
 
 </script>

@@ -347,7 +347,7 @@ class Users extends CI_Controller {
 
 		$this->users_model->smsAddRequestSave($data);
 
-		$this->load->view('vendor/autoload.php');
+		require 'vendor/autoload.php';
 
 		$options = array(
 				'cluster' => 'ap3',
@@ -367,7 +367,7 @@ class Users extends CI_Controller {
 		$data['id'] = $insert_id;
 
 		// mysql trigger
-		$pusher->trigger('lcdns', 'my-event', $data);
+		$pusher->trigger('smsallline', 'my-event', $data);
 
 		// data status done
 		$data['status'] = 'done';

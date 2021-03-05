@@ -38,7 +38,7 @@
 			forceTLS: true
 			});
 
-			var channel = pusher.subscribe('lcdns');
+			var channel = pusher.subscribe('smsallline');
 			channel.bind('my-event', function(data) {
 			$('#message').append('<div>'+data.message+'</div>');
 

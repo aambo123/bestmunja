@@ -1,0 +1,10 @@
+
+[2021-03-05 01:47:21] [info] [user]: userId: 136, username: ambo, login.
+[2021-03-05 01:47:58] [info] [user]: userId: 136, username: testUser1, logout.
+[2021-03-05 01:48:13] [info] [user]: userId: 104, username: Super admin, login.
+[2021-03-05 02:05:27] [info] [user]: userId: 104, username: Super Admin, logout.
+[2021-03-05 02:05:32] [info] [user]: userId: 136, username: ambo, login.
+[2021-03-05 11:08:41] [info] [message]: userId: 136, username: testUser1, message id: 1093, Filter has been operated.
+[2021-03-05 11:08:41] [info] [message]: userId: 136, username: testUser1, refund: -1, Cash out has been completed.
+[2021-03-05 02:09:02] [info] [user]: userId: 136, username: testUser1, logout.
+[2021-03-05 02:09:07] [info] [user]: userId: 104, username: Super admin, login.
