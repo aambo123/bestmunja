@@ -2663,11 +2663,11 @@ class Admin extends CI_Controller {
 			
 
 			// Check message price
-			if($member_msg_price > $cash){
-				echo 'Requested price must be higher than message price!';
-				// echo '요청한 가격이 메시지 가격보다 높아야합니다!';
-				die();
-			}
+			// if($member_msg_price > $cash){
+			// 	echo 'Requested price must be higher than message price!';
+			// 	// echo '요청한 가격이 메시지 가격보다 높아야합니다!';
+			// 	die();
+			// }
 			
 			// Check message quantity
 			// if ($msg_num >= $member_msg_num){

@@ -94,7 +94,7 @@
 							if($nb->success == 3){
 								echo '<li class="grid-item danger"><div class="status danger" style="width: 174px;">';
 								echo '<span class=number>' . $nb->phone_number . '</span>';
-								echo '<span  class="status-label danger">대기</span>';
+								echo '<span  class="status-label danger">실패</span>';
 								echo '</div></li>';
 							}
 						}

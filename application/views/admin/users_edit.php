@@ -149,7 +149,7 @@
 								<input type="hidden" name="old_mb_email" value="<?php echo $user->mb_email; ?>">
 								<input class="form-control" type="text" name="mb_email" id="mb_email"
 									value="<?php if(isset($_POST['mb_email'])){ echo "".$_POST['mb_email'].""; }else{ echo $user->mb_email;} ?>"
-									required maxlength="15">
+									required>
 							</div>
 						</div>
 						<!-- /email -->
