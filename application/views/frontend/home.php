@@ -1,4 +1,3 @@
-<video muted id="loading" src="/assets/loading.mp4"></video>
 <div class="home">
     <video muted autoplay loop id="main_video" src="/assets/main.mov"></video>
     <div class="container">
@@ -13,24 +12,7 @@
         $('header').addClass("fixed");
         $('.app-footer').addClass("fixed");
     })
-    var vid = document.getElementById("loading");
-    if(GetCookie("loadingPlayed") != "false"){
-        $("#loading").addClass("playing");
-        vid.play();
-    }else{
-        $("#loading").remove();
-    }
-    vid.addEventListener('ended', function(e) {
-        vid.pause()
-        vid.currentTime = 0;
-        vid.classList.remove('playing');
-        setTimeout(function() {
-            vid.parentNode.removeChild(vid);
-            $('.app-footer').addClass("fixed");
-            var expired = getDateByjQueryDateFormat('1d');
-            SetCookie("loadingPlayed", false, null, null, expired)
-        }, 2000);
-    }, false);
+    
 
 </script>
 <style>
