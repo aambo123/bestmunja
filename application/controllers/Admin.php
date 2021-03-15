@@ -19,7 +19,7 @@ use PhpOffice\PhpSpreadsheet\Style\Border;
 class Admin extends CI_Controller {
 
 	/**
-	 * @constructor
+	 * @constructor`
 	 */
 	function __construct(){
 
@@ -479,6 +479,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function downloadMessageRequests(){
+		
 		$table = [];
 		$fileName = 'Message Add Requests';
 		$fields = ['id', 'member_name', 'total_price', 'num_send', 'status', 'approve_id', 'approve_date'];
@@ -928,7 +929,7 @@ class Admin extends CI_Controller {
 				->setCategory('');
 
 		$spreadsheet->getActiveSheet()->getStyle($thead)->applyFromArray($tableHead);
-
+ 
 		// Create Excel		
 		foreach ($table as $index_row => $row) {
 			foreach ($row as $index_field => $field) {
